@@ -1,0 +1,11 @@
+
+$testColor: pink; 
+
+body {
+	background: $testColor; 
+
+	p {
+		background: #fff; 
+		padding: 50px; 
+	}
+}

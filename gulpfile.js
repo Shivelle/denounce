@@ -1,0 +1,79 @@
+var gulp = require('gulp'), 
+	plugins = require('gulp-load-plugins')(),
+	browserSync = require('browser-sync').create(), 
+    sass = require('gulp-ruby-sass'), 
+    notify = require("gulp-notify"), 
+    bower = require('gulp-bower');
+
+var config = {
+	    sassPath: './sass',
+	    bowerDir: './bower_components'
+}
+
+
+// run bower with bootstrap, jquery, fontawesome
+gulp.task('bower', function() {
+    return bower()
+        .pipe(gulp.dest(config.bowerDir))
+});
+
+// compile sass to css
+gulp.task ('css', function() {
+	// compile sass
+	// output file to  a dist/
+	return gulp.src(['./src/sass/landing.scss', 
+		'./src/sass/dev.scss',
+		'./src/sass/trans.scss'
+	])
+	.pipe(plugins.sourcemaps.init())
+	.pipe(plugins.sass().on('error', plugins.sass.logError))
+	.pipe(plugins.cssmin())
+	.pipe(plugins.autoprefixer())
+	.pipe(plugins.sourcemaps.write())
+	.pipe(gulp.dest('./dist/css')) 
+	.pipe(browserSync.stream());
+});
+
+// javascript task
+gulp.task ('js', function() {
+	return gulp.src([
+		'./node_modules/jquery/dist/jquery.min.js', 
+		'./src/js/landing.js', 
+		'./src/js/dev.js',
+		'./src/js/trans.js'
+	])
+	.pipe(plugins.babel({
+		presets: ['es2015']
+	}))
+	.pipe(plugins.concat('all.js'))
+	.pipe(plugins.uglify())
+	.pipe(gulp.dest('./dist/js'))
+	.pipe(browserSync.stream()); 
+}); 
+
+
+// watch for file changes and run tasks
+gulp.task('watch', function () {
+	gulp.watch(['./src/sass/*.scss'], ['css']); 
+	gulp.watch(['./src/js/*.js'], ['js']); 
+}); 
+
+// browse our app through browsersync
+gulp.task('serve', function() {
+	browserSync.init({
+		server: {
+			baseDir: './'
+		}
+	});
+
+	gulp.watch('*.html').on('change', browserSync.reload);  
+}); 
+
+// moving fonts to public/fonts
+gulp.task('icons', function() {
+    return gulp.src(config.bowerDir + '/fontawesome/fonts/**.*')
+        .pipe(gulp.dest('./public/fonts'));
+});
+
+// autorun
+gulp.task('default', ['css', 'js', 'watch', 'serve', 'bower', 'icons']); 

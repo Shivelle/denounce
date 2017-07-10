@@ -1,0 +1,3 @@
+- include jquery (in progress)
+- include bootstrap (in progress) 
+- fix error "cannot GET /"
