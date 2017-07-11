@@ -2,20 +2,9 @@ var gulp = require('gulp'),
 	plugins = require('gulp-load-plugins')(),
 	browserSync = require('browser-sync').create(), 
     sass = require('gulp-ruby-sass'), 
-    notify = require("gulp-notify"), 
-    bower = require('gulp-bower');
-
-var config = {
-	    sassPath: './sass',
-	    bowerDir: './bower_components'
-}
+    notify = require("gulp-notify"); 
 
 
-// run bower with bootstrap, jquery, fontawesome
-gulp.task('bower', function() {
-    return bower()
-        .pipe(gulp.dest(config.bowerDir))
-});
 
 // compile sass to css
 gulp.task ('css', function() {
@@ -69,11 +58,5 @@ gulp.task('serve', function() {
 	gulp.watch('*.html').on('change', browserSync.reload);  
 }); 
 
-// moving fonts to public/fonts
-gulp.task('icons', function() {
-    return gulp.src(config.bowerDir + '/fontawesome/fonts/**.*')
-        .pipe(gulp.dest('./public/fonts'));
-});
-
 // autorun
-gulp.task('default', ['css', 'js', 'watch', 'serve', 'bower', 'icons']); 
+gulp.task('default', ['css', 'js', 'watch', 'serve']); 
