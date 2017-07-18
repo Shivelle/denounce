@@ -3,21 +3,23 @@ $blue: #1e90ff;
 $green: #39d24a;
 $yellow: #ffe244;
 $pink: #ff36a3;
-$testColor: #ddd; 
+$testColor: #efefef; 
 
 body {
 	background: $testColor;
+	
 
 	p {
-		background: #fff; 
 		padding: 50px; 
 	}
 
 
 .page {
 	position: relative; 
+
 	/* =====================================*/
 	.static {
+		color: $white; 
 		padding: 0; 
 		position: fixed;
 		height: 100vh; 
@@ -26,7 +28,10 @@ body {
     	linear-gradient(to top, dodgerblue 0%, transparent 70%),    
     	linear-gradient(to bottom, transparent, rgba($white, 0.4) 70%),
     	$blue;  
+    	background-size: cover; 
+    	background-position: center; 
   		animation: bg 30s infinite; 
+  		z-index: 999; 
 	}
 
 
@@ -39,16 +44,19 @@ body {
 		right: 0; 
 		top: 0; 
 		z-index: 10; 
+		overflow: hidden; 
 
 		.scroll-line {
 		      position: fixed;
 		      top: 0;
 		      right: 0;
 		      width: 50vw; 
-		      height: 16px;
-		      background: #EE6352;
+		      height: 13px;
+		      background: #232323;
 		      transition: 0.7s cubic-bezier(0.075, 0.82, 0.165, 1.666) width;
-		      z-index: 999;
+		      //box-shadow: 0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.2);
+		      z-index: 20;
+		      display: none; 
 		}
 
 	}
