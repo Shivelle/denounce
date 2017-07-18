@@ -1,1 +1,8 @@
-
+- find colors
+- find typography
+- add img gallery (codepen)
+- add about
+- add contact info
+- more confetti? :) 
+- fade-in animations
+- check if mobile-friendly
