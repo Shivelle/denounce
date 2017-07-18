@@ -50,6 +50,9 @@ gulp.task('serve', function() {
 	browserSync.init({
 		server: {
 			baseDir: './'
+		}, 
+		socket: {
+    		domain: "localhost:3000"
 		}
 	});
 

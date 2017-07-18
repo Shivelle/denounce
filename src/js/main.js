@@ -1,10 +1,13 @@
 
 
 	// grab stuff
-    const scrollLine = document.querySelector('.scroll-line');
-    const mainContent = document.querySelector('.main-content');
-    const canvas = document.querySelector('#canvas');  
-
+    const scrollLine  = document.querySelector('.scroll-line'), 
+          mainContent = document.querySelector('.main-content'), 
+          canvas 	  = document.querySelector('#canvas'),  
+          greeting    = document.querySelector('.greeting'),  
+          hi 		  = document.querySelector('.hi'),  
+          //time        = new Date();
+          time 		 = new Date();  
 
 
     console.log(canvas)
@@ -20,11 +23,33 @@
       scrollLine.style.width = `${percentScrolled}%`;
     }
 
+    function displayGreeting() {
+
+    	if(time.getHours() >= 0 && time.getHours() < 6) {
+    		greeting.innerHTML 	= 'Na, Sie Nachteule?'; 
+    		hi.innerHTML 		= 'Gute, aktive Nacht!';
+
+    	} else if (time.getHours() >= 6 && time.getHours() < 12) {
+    		greeting.innerHTML	= 'Morgenstund hat Gold im Mund!';
+    		hi.innerHTML 		= 'Guten Morgen!'; 	 
+
+
+    	} else if (time.getHours() >= 12 && time.getHours() < 18) {
+    		greeting.innerHTML 	= 'Lass die Sonne in dein Herz!'; 
+    		hi.innerHTML		= 'Guten Tag!'; 
+
+
+    	} else {
+    		greeting.innerHTML 	= 'Feierabend, wie das duftet!';  
+    		hi.innerHTML 		= 'Guten Abend!'; 
+    	}
+    } 
+
     // event listeners
     window.addEventListener('scroll', debounce(fillScrollLine));
+    window.addEventListener('load', displayGreeting); 
 
-
-    // vendor functions
+    // vendor functions ================================================
     	// debounce function for scrollLine
 	    function debounce(func, wait = 15, immediate) {
 	      var timeout;
