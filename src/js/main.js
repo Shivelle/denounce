@@ -10,7 +10,6 @@
           time 		 	= new Date();  
 
 
-    console.log(canvas)
 
     // functions
     function fillScrollLine() {
@@ -26,28 +25,28 @@
     function displayGreeting() {
 
     	if(time.getHours() >= 0 && time.getHours() < 6) {
-    		greeting.innerHTML 	= 'Na, Sie Nachteule?'; 
+    		greeting.innerHTML 	= 'Na, Sie <em>Nachteule</em>?'; 
     		hi.innerHTML 		= 'Gute, aktive Nacht!';
-    		welcome.innerHTML	= 'Sie haben sich also mitten in der Nacht auf meine Website verirrt.'; 
+    		welcome.innerHTML	= '<p>Sie haben sich also mitten in der Nacht auf meine Website verirrt.</p>'; 
 
 
     	} else if (time.getHours() >= 6 && time.getHours() < 12) {
-    		greeting.innerHTML	= 'Morgenstund hat Gold im Mund!';
+    		greeting.innerHTML	= '<em>Morgenstund</em> hat Gold im Mund!';
     		hi.innerHTML 		= 'Guten Morgen!'; 
-    		welcome.innerHTML 	= 'Morgens, vor 12, und Sie haben meine Website gefunden.'; 
+    		welcome.innerHTML 	= '<p>Morgens, vor 12, und Sie haben meine Website gefunden.</p>'; 
 
 
     	} else if (time.getHours() >= 12 && time.getHours() < 18) {
-    		greeting.innerHTML 	= 'Lass die Sonne in dein Herz!'; 
+    		greeting.innerHTML 	= 'Lass die <em>Sonne</em> in dein Herz!'; 
     		hi.innerHTML		= 'Guten Tag!'; 
-    		welcome.innerHTML 	= 'Na, schon Mittagpause gehabt? Schön, dass Sie meine Website besuchen.'; 
+    		welcome.innerHTML 	= '<p>Na, schon Mittagpause gehabt? Schön, dass Sie meine Website besuchen.</p>'; 
 
 
 
     	} else {
-    		greeting.innerHTML 	= 'Feierabend, wie das duftet!';  
+    		greeting.innerHTML 	= '<em>Feierabend</em>, wie das duftet!';  
     		hi.innerHTML 		= 'Guten Abend!'; 
-    		welcome.innerHTML 	= 'Noch schnell zum Feierabend auf meiner Website vorbeischauen? Finde ich gut!'; 
+    		welcome.innerHTML 	= '<p>Noch schnell zum Feierabend auf meiner Website vorbeischauen? Finde ich gut!</p>'; 
 
     	}
     } 

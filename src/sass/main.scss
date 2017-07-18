@@ -2,6 +2,7 @@ $white: #fff;
 $static: #40b9c7; 
 $bodyColor: #efefef; 
 $staticBlue: #40b9c7;
+$iceBlue: #C6D8D3; 
 $staticBlack: #171D1C; 
 $highlightLight: #F4827F; 
 
@@ -11,6 +12,15 @@ body {
 
 	p {
 		padding: 50px; 
+		font-family: 'Arimo', sans-serif;
+	}
+
+	em {
+		color: $highlightLight; 
+	}
+
+	h1, h2, h3, h4 {
+		font-family: 'Oswald', sans-serif;	
 	}
 
 
@@ -39,6 +49,18 @@ body {
 
   			.greeting {
   				font-size: 2.5em;
+  			}
+
+  			h2 {
+  				font-size: 1.9em; 
+  			}
+
+  			p {
+  				color: lightgray; 
+
+  				i {
+  					color: $highlightLight; 
+  				}
   			}
 
 			.social-icons {
@@ -89,7 +111,7 @@ body {
 		      top: 0;
 		      right: 0;
 		      width: 50vw; 
-		      height: 13px;
+		      height: 10px;
 		      background: $staticBlue;
 		      transition: 0.7s cubic-bezier(0.075, 0.82, 0.165, 1.666) width;
 		      z-index: 20;
