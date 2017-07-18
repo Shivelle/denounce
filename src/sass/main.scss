@@ -1,8 +1,12 @@
-
-$testColor: pink; 
+$white: #fff;
+$blue: #1e90ff;
+$green: #39d24a;
+$yellow: #ffe244;
+$pink: #ff36a3;
+$testColor: #ddd; 
 
 body {
-	background: $testColor; 
+	background: $testColor;
 
 	p {
 		background: #fff; 
@@ -14,21 +18,27 @@ body {
 	position: relative; 
 	/* =====================================*/
 	.static {
-		background: red; 
 		padding: 0; 
 		position: fixed;
-		height: 100vh;  
+		height: 100vh; 
+		background: 
+    	radial-gradient(circle at bottom, $white, transparent 80%),    
+    	linear-gradient(to top, dodgerblue 0%, transparent 70%),    
+    	linear-gradient(to bottom, transparent, rgba($white, 0.4) 70%),
+    	$blue;  
+  		animation: bg 30s infinite; 
 	}
 
 
 
 	/* =====================================*/ 
 	.main-content {
+		padding: 0; 
 		height: 3000px; 
 		position: absolute; 
 		right: 0; 
 		top: 0; 
-		z-index: 10
+		z-index: 10; 
 
 		.scroll-line {
 		      position: fixed;
@@ -52,5 +62,14 @@ body {
 
 
 } /* body */ 
+
+
+
+@keyframes bg {
+  0%, 100% { background-color: $blue; }
+  25% { background-color: $green; }
+  50% { background-color: $yellow; }
+  75% { background-color: $pink; }
+}
 
 
