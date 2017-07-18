@@ -1,13 +1,13 @@
 
 
 	// grab stuff
-    const scrollLine  = document.querySelector('.scroll-line'), 
-          mainContent = document.querySelector('.main-content'), 
-          canvas 	  = document.querySelector('#canvas'),  
-          greeting    = document.querySelector('.greeting'),  
-          hi 		  = document.querySelector('.hi'),  
-          //time        = new Date();
-          time 		 = new Date();  
+    const scrollLine  	= document.querySelector('.scroll-line'), 
+          mainContent 	= document.querySelector('.main-content'), 
+          canvas 	  	= document.querySelector('#canvas'),  
+          greeting    	= document.querySelector('.greeting'),  
+          hi 		  	= document.querySelector('.hi'),  
+          welcome		= document.querySelector('.welcome'), 
+          time 		 	= new Date();  
 
 
     console.log(canvas)
@@ -28,20 +28,27 @@
     	if(time.getHours() >= 0 && time.getHours() < 6) {
     		greeting.innerHTML 	= 'Na, Sie Nachteule?'; 
     		hi.innerHTML 		= 'Gute, aktive Nacht!';
+    		welcome.innerHTML	= 'Sie haben sich also mitten in der Nacht auf meine Website verirrt.'; 
+
 
     	} else if (time.getHours() >= 6 && time.getHours() < 12) {
     		greeting.innerHTML	= 'Morgenstund hat Gold im Mund!';
-    		hi.innerHTML 		= 'Guten Morgen!'; 	 
+    		hi.innerHTML 		= 'Guten Morgen!'; 
+    		welcome.innerHTML 	= 'Morgens, vor 12, und Sie haben meine Website gefunden.'; 
 
 
     	} else if (time.getHours() >= 12 && time.getHours() < 18) {
     		greeting.innerHTML 	= 'Lass die Sonne in dein Herz!'; 
     		hi.innerHTML		= 'Guten Tag!'; 
+    		welcome.innerHTML 	= 'Na, schon Mittagpause gehabt? Schön, dass Sie meine Website besuchen.'; 
+
 
 
     	} else {
     		greeting.innerHTML 	= 'Feierabend, wie das duftet!';  
     		hi.innerHTML 		= 'Guten Abend!'; 
+    		welcome.innerHTML 	= 'Noch schnell zum Feierabend auf meiner Website vorbeischauen? Finde ich gut!'; 
+
     	}
     } 
 
