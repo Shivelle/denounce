@@ -10,9 +10,8 @@ var gulp = require('gulp'),
 gulp.task ('css', function() {
 	// compile sass
 	// output file to  a dist/
-	return gulp.src(['./src/sass/landing.scss', 
-		'./src/sass/dev.scss',
-		'./src/sass/trans.scss'
+	return gulp.src(['./src/sass/main.scss', 
+		'./src/sass/alt.scss'
 	])
 	.pipe(plugins.sourcemaps.init())
 	.pipe(plugins.sass().on('error', plugins.sass.logError))
@@ -27,9 +26,8 @@ gulp.task ('css', function() {
 gulp.task ('js', function() {
 	return gulp.src([
 		'./node_modules/jquery/dist/jquery.min.js', 
-		'./src/js/landing.js', 
-		'./src/js/dev.js',
-		'./src/js/trans.js'
+		'./src/js/main.js', 
+		'./src/js/alt.js',
 	])
 	.pipe(plugins.babel({
 		presets: ['es2015']
