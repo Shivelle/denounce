@@ -1,12 +1,10 @@
 $white: #fff;
-$blue: #1e90ff;
-$green: #39d24a;
-$yellow: #ffe244;
-$pink: #ff36a3;
-$testColor: #efefef; 
+$static: #40b9c7; 
+$bodyColor: #efefef; 
+$staticBlue: #40b9c7;
 
 body {
-	background: $testColor;
+	background: $bodyColor;
 	
 
 	p {
@@ -18,23 +16,41 @@ body {
 	position: relative; 
 
 	/* =====================================*/
+.row {
+	position: relative; 
+
+
 	.static {
-		color: $white; 
+		color: #FF0000; 
+		background-color: #40b9c7;   
 		padding: 0; 
 		position: fixed;
 		height: 100vh; 
-		background: 
-    	radial-gradient(circle at bottom, $white, transparent 80%),    
-    	linear-gradient(to top, dodgerblue 0%, transparent 70%),    
-    	linear-gradient(to bottom, transparent, rgba($white, 0.4) 70%),
-    	$blue;  
-    	background-size: cover; 
-    	background-position: center; 
-  		animation: bg 30s infinite; 
   		z-index: 999; 
+
+  		.static-txt {
+  			position: absolute; 
+  			text-align: center; 
+  			top: 25%; 
+  			width: 100%; 
+  			height: 100%; 
+  			color: #efefef; 
+
+  		}
+
+  		#canvas {
+  			width: 50vw; 
+  			height: 100vh; 
+  			position: relative; 
+  			z-index: -1; 
+
+  		}
+
+
+
 	}
 
-
+}
 
 	/* =====================================*/ 
 	.main-content {
@@ -52,9 +68,8 @@ body {
 		      right: 0;
 		      width: 50vw; 
 		      height: 13px;
-		      background: #232323;
+		      background: $staticBlue;
 		      transition: 0.7s cubic-bezier(0.075, 0.82, 0.165, 1.666) width;
-		      //box-shadow: 0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.2);
 		      z-index: 20;
 		      display: none; 
 		}
@@ -72,12 +87,5 @@ body {
 } /* body */ 
 
 
-
-@keyframes bg {
-  0%, 100% { background-color: $blue; }
-  25% { background-color: $green; }
-  50% { background-color: $yellow; }
-  75% { background-color: $pink; }
-}
 
 

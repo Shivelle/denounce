@@ -2,8 +2,12 @@
 
 	// grab stuff
     const scrollLine = document.querySelector('.scroll-line');
-    const mainContent = document.querySelector('.main-content'); 
+    const mainContent = document.querySelector('.main-content');
+    const canvas = document.querySelector('#canvas');  
 
+
+
+    console.log(canvas)
 
     // functions
     function fillScrollLine() {
@@ -37,6 +41,159 @@
 	      };
 	    } 
 
+		// compiled typescript -> es5 -> es6
+		(() => {
+		  let COLORS;
+		  let Confetti;
+		  let NUM_CONFETTI;
+		  let PI_2;
+		  let canvas;
+		  let confetti;
+		  let context;
+		  let drawCircle;
+		  let drawCircle2;
+		  let drawCircle3;
+		  let i;
+		  let range;
+		  let xpos;
+
+		  NUM_CONFETTI = 60;
+
+		  COLORS = [[255, 255, 255], [255, 144, 0], [255, 255, 255], [255, 144, 0], [0, 277, 235]];
+
+		  PI_2 = 2 * Math.PI;
+
+		  canvas = document.getElementById("canvas");
+
+		  context = canvas.getContext("2d");
+
+		  window.w = 0;
+
+		  window.h = 0;
+
+		  window.resizeWindow = () => {
+		    window.w = canvas.width = window.innerWidth;
+		    return window.h = canvas.height = window.innerHeight;
+		  };
+
+		  window.addEventListener('resize', resizeWindow, false);
+
+		  window.onload = () => setTimeout(resizeWindow, 0);
+
+		  range = (a, b) => (b - a) * Math.random() + a;
+
+		  drawCircle = (x, y, r, style) => {
+		    context.beginPath();
+		    context.moveTo(x, y);
+		    context.lineTo(x + 2, y);
+		    context.lineTo(x + 2, y - 2);
+		    context.lineTo(x, y);
+		    context.closePath();
+		    context.fillStyle = style;
+		    return context.fill();
+		  };
+
+		  drawCircle2 = (x, y, r, style) => {
+		    context.beginPath();
+		    context.moveTo(x, y);
+		    context.lineTo(x + 2, y);
+		    context.lineTo(x + 2, y - 2);
+		    context.lineTo(x, y);
+		    context.closePath();
+		    context.fillStyle = style;
+		    return context.fill();
+		  };
+
+		  drawCircle3 = (x, y, r, style) => {
+		    context.beginPath();
+		    context.moveTo(x, y);
+		    context.lineTo(x + 2, y);
+		    context.lineTo(x + 2, y - 2);
+		    context.lineTo(x, y);
+		    context.closePath();
+		    context.fillStyle = style;
+		    return context.fill();
+		  };
+
+		  xpos = 0.9;
+
+		  document.onmousemove = e => xpos = e.pageX / w;
+
+		  window.requestAnimationFrame = ((() => window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || (callback => window.setTimeout(callback, 100 / 20))))();
+
+		  Confetti = ((() => {
+		    class Confetti {
+		      constructor() {
+		        this.style = COLORS[~~range(0, 5)];
+		        this.rgb = `rgba(${this.style[0]},${this.style[1]},${this.style[2]}`;
+		        this.r = ~~range(2, 6);
+		        this.r2 = 2 * this.r;
+		        this.replace();
+		      }
+
+		      replace() {
+		        this.opacity = 0;
+		        this.dop = 0.03 * range(1, 4);
+		        this.x = range(-this.r2, w - this.r2);
+		        this.y = range(-20, h - this.r2);
+		        this.xmax = w - this.r;
+		        this.ymax = h - this.r;
+		        this.vx = range(0, 2) + 8 * xpos - 5;
+		        return this.vy = 0.7 * this.r + range(-1, 1);
+		      }
+
+		      draw() {
+		        let ref;
+		        this.x += this.vx;
+		        this.y += this.vy;
+		        this.opacity += this.dop;
+		        if (this.opacity > 1) {
+		          this.opacity = 1;
+		          this.dop *= -1;
+		        }
+		        if (this.opacity < 0 || this.y > this.ymax) {
+		          this.replace();
+		        }
+		        if (!((0 < (ref = this.x) && ref < this.xmax))) {
+		          this.x = (this.x + this.xmax) % this.xmax;
+		        }
+		        drawCircle(~~this.x, ~~this.y, this.r, `${this.rgb},${this.opacity})`);
+		        drawCircle3(~~this.x * 0.5, ~~this.y, this.r, `${this.rgb},${this.opacity})`);
+		        return drawCircle2(~~this.x * 1.5, ~~this.y * 1.5, this.r, `${this.rgb},${this.opacity})`);
+		      }
+		    }
+
+		    return Confetti;
+		  }))();
+
+		  confetti = ((() => {
+		    let j;
+		    let ref;
+		    let results;
+		    results = [];
+		    for (i = j = 1, ref = NUM_CONFETTI; 1 <= ref ? j <= ref : j >= ref; i = 1 <= ref ? ++j : --j) {
+		      results.push(new Confetti);
+		    }
+		    return results;
+		  }))();
+
+		  window.step = () => {
+		    let c;
+		    let j;
+		    let len;
+		    let results;
+		    requestAnimationFrame(step);
+		    context.clearRect(0, 0, w, h);
+		    results = [];
+		    for (j = 0, len = confetti.length; j < len; j++) {
+		      c = confetti[j];
+		      results.push(c.draw());
+		    }
+		    return results;
+		  };
+
+		  step();
+		}).call(this);
 
 
     // some hello msg
