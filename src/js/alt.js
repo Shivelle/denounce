@@ -1,1 +1,1 @@
-console.log('hello from trans.js'); 
+console.log('hello from alt.js'); 

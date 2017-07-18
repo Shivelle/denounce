@@ -8,4 +8,49 @@ body {
 		background: #fff; 
 		padding: 50px; 
 	}
+
+
+.page {
+	position: relative; 
+	/* =====================================*/
+	.static {
+		background: red; 
+		padding: 0; 
+		position: fixed;
+		height: 100vh;  
+	}
+
+
+
+	/* =====================================*/ 
+	.main-content {
+		height: 3000px; 
+		position: absolute; 
+		right: 0; 
+		top: 0; 
+		z-index: 10
+
+		.scroll-line {
+		      position: fixed;
+		      top: 0;
+		      right: 0;
+		      width: 50vw; 
+		      height: 16px;
+		      background: #EE6352;
+		      transition: 0.7s cubic-bezier(0.075, 0.82, 0.165, 1.666) width;
+		      z-index: 999;
+		}
+
+	}
+
+
 }
+
+
+
+
+
+
+} /* body */ 
+
+
