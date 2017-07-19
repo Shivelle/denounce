@@ -17,7 +17,6 @@ body {
 	
 
 	p {
-		padding: 50px; 
 		font-family: 'Arimo', sans-serif;
 	}
 
@@ -27,6 +26,10 @@ body {
 
 	h1, h2, h3, h4 {
 		font-family: 'Oswald', sans-serif;	
+	}
+
+	ul {
+		list-style-type: none; 
 	}
 
 
@@ -103,9 +106,8 @@ body {
 }
 
 	/* =====================================*/ 
-	.main-content {
+	.main-content { 
 		padding: 0; 
-		height: 3000px; 
 		position: absolute; 
 		right: 0; 
 		top: 0; 
@@ -124,6 +126,7 @@ body {
 		      display: none; 
 		}
 
+		/* ==============================================*/ 
 		.welcome {
 			background-color: $highlightLight;  
 			color: $white;
@@ -148,7 +151,32 @@ body {
 				}				
 			}	
 
+		}
 
+		/* ================================================= */
+		#info {
+			padding: 50px; 
+		}
+
+
+		/* ================================================= */
+		#skills {
+			padding: 20px; 
+			height: 500px; 
+			background: $white; 
+
+			ul {
+				text-align: right; 
+				em {
+					font-size: 1.3em; 
+				}
+			}
+		}
+
+		/* ================================================= */ 
+		#gallery {
+			height: 800px; 
+			background: #020202
 		}
 
 	}
