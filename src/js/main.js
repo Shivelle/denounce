@@ -27,27 +27,25 @@
     	if(time.getHours() >= 0 && time.getHours() < 6) {
     		greeting.innerHTML 	= 'Na, Sie <em>Nachteule</em>?'; 
     		hi.innerHTML 		= 'Gute, aktive Nacht!';
-    		welcome.innerHTML	= 'Sie haben sich also mitten in der Nacht auf meine Website verirrt. '; 
+    		welcome.innerHTML	= 'Sie haben sich also mitten in der <span class="gray">Nacht</span> auf meine Website verirrt. ';
 
 
     	} else if (time.getHours() >= 6 && time.getHours() < 12) {
     		greeting.innerHTML	= '<em>Morgenstund</em> hat Gold im Mund!';
     		hi.innerHTML 		= 'Guten Morgen!'; 
-    		welcome.innerHTML 	= 'Noch nicht mal Mittag und Sie haben schon meine Website gefunden. '; 
+    		welcome.innerHTML 	= 'Noch nicht mal <span class="gray">Mittag</span> und Sie haben schon meine Website gefunden. '; 
 
 
     	} else if (time.getHours() >= 12 && time.getHours() < 18) {
     		greeting.innerHTML 	= 'Lass die <em>Sonne</em> in dein Herz!'; 
     		hi.innerHTML		= 'Guten Tag!'; 
-    		welcome.innerHTML 	= 'Na, schon Mittagpause gehabt? Schön, dass Sie meine Website besuchen. '; 
-
+    		welcome.innerHTML 	= 'Na, schon <span class="gray">Mittagpause</span> gehabt? Schön, dass Sie meine Website besuchen. '; 
 
 
     	} else {
     		greeting.innerHTML 	= '<em>Feierabend</em>, wie das duftet!';  
     		hi.innerHTML 		= 'Guten Abend!'; 
-    		welcome.innerHTML 	= 'Noch schnell zum Feierabend auf meiner Website vorbeischauen? Finde ich gut! '; 
-
+    		welcome.innerHTML 	= 'Noch schnell zum <span class="gray">Feierabend</span> auf meiner Website vorbeischauen? Finde ich gut! '; 
     	}
     } 
 

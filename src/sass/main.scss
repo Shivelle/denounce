@@ -4,7 +4,13 @@ $bodyColor: #efefef;
 $staticBlue: #40b9c7;
 $iceBlue: #C6D8D3; 
 $staticBlack: #171D1C; 
-$highlightLight: #F4827F; 
+$highlightLight: #F4827F; // pink
+$yellow: #F4D35E; 
+$orangeHl: #E2711D; // orange
+$yellowHl: #E59500; // yellow
+$nightHl: #7F7EFF; // purple-blue
+
+
 
 body {
 	background: $bodyColor;
@@ -119,13 +125,30 @@ body {
 		}
 
 		.welcome {
-			background-color: $highlightLight; 
+			background-color: $highlightLight;  
 			color: $white;
 			padding: 25px; 
 			text-align: center; 
 			font-size: 1.2em;
 			letter-spacing: .1em;  
 			line-height: 1.4em; 
+			position: relative; 
+
+			p	{
+
+				#welcome {
+
+					line-height: 1.6em; 
+
+
+					span.gray {
+						color: #555; 
+						font-size: 1.6em; 
+					}
+				}				
+			}	
+
+
 		}
 
 	}
@@ -139,7 +162,6 @@ body {
 
 
 } /* body */ 
-
 
 
 
