@@ -6,7 +6,7 @@
           canvas 	  	= document.querySelector('#canvas'),  
           greeting    	= document.querySelector('.greeting'),  
           hi 		  	= document.querySelector('.hi'),  
-          welcome		= document.querySelector('.welcome'), 
+          welcome		= document.querySelector('#welcome'), 
           time 		 	= new Date();  
 
 
@@ -27,26 +27,26 @@
     	if(time.getHours() >= 0 && time.getHours() < 6) {
     		greeting.innerHTML 	= 'Na, Sie <em>Nachteule</em>?'; 
     		hi.innerHTML 		= 'Gute, aktive Nacht!';
-    		welcome.innerHTML	= '<p>Sie haben sich also mitten in der Nacht auf meine Website verirrt.</p>'; 
+    		welcome.innerHTML	= 'Sie haben sich also mitten in der Nacht auf meine Website verirrt. '; 
 
 
     	} else if (time.getHours() >= 6 && time.getHours() < 12) {
     		greeting.innerHTML	= '<em>Morgenstund</em> hat Gold im Mund!';
     		hi.innerHTML 		= 'Guten Morgen!'; 
-    		welcome.innerHTML 	= '<p>Morgens, vor 12, und Sie haben meine Website gefunden.</p>'; 
+    		welcome.innerHTML 	= 'Noch nicht mal Mittag und Sie haben schon meine Website gefunden. '; 
 
 
     	} else if (time.getHours() >= 12 && time.getHours() < 18) {
     		greeting.innerHTML 	= 'Lass die <em>Sonne</em> in dein Herz!'; 
     		hi.innerHTML		= 'Guten Tag!'; 
-    		welcome.innerHTML 	= '<p>Na, schon Mittagpause gehabt? Schön, dass Sie meine Website besuchen.</p>'; 
+    		welcome.innerHTML 	= 'Na, schon Mittagpause gehabt? Schön, dass Sie meine Website besuchen. '; 
 
 
 
     	} else {
     		greeting.innerHTML 	= '<em>Feierabend</em>, wie das duftet!';  
     		hi.innerHTML 		= 'Guten Abend!'; 
-    		welcome.innerHTML 	= '<p>Noch schnell zum Feierabend auf meiner Website vorbeischauen? Finde ich gut!</p>'; 
+    		welcome.innerHTML 	= 'Noch schnell zum Feierabend auf meiner Website vorbeischauen? Finde ich gut! '; 
 
     	}
     } 
