@@ -168,8 +168,12 @@ body {
 			
 			.row {
 				margin-top: 1em; 
+				text-align: center; 
 
 				.skill-icon {
+					display: inline-block; 
+					float: none; 
+					text-align: left; 
 					margin-bottom: 2em; 
 					
 					i {
