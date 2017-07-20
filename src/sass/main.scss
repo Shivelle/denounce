@@ -265,15 +265,51 @@ body {
 			background: #020202; 
 			padding: 0; 
 			.row {
+				overflow: hidden; 
 
 				.gallery-img {
+					position: relative; 
 					padding: 0; 
-					img {
-						height: 250px;  
-						width: 400px;
-						object-fit: cover;  
-						padding: 0; 
+					overflow: hidden; 
+					width: 300px; 
+					height: 250px; 
+
+					.overlay{
+
+						content: '\A';
+						position: absolute;
+						height: 100%; 
+						width: 100%; 
+						bottom: 0; right: 0;
+						background: $staticBlack; 
+						opacity: 0.9;
+						overflow: hidden; 	
+						bottom: 0; right: 0;
+						transition: all 1s;
+						-webkit-transition: all .6s ease-in-out;	
+
+						&:hover:after {
+							opacity: 1; 
+							bottom: 0; right: -150px;
+							width: 150%; height: 100%;
+							-webkit-transform: skew(-50deg);
+							-moz-transform: skew(-50deg);
+							-ms-transform: skew(-50deg);
+							-o-transform: skew(-50deg);
+							transform: skew(-50deg); 
+						}
+
+			
 					}
+
+
+
+					.gallery-txt {
+						position: absolute; 
+						right: 15px; bottom: 5px; 
+						color: $white; 
+					}
+
 				}
 			}
 		}
