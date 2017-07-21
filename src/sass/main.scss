@@ -262,53 +262,51 @@ body {
 
 		/* ========================= GALLERY ======================== */ 
 		#gallery {
-			background: #020202; 
+			background: $staticBlack; 
 			padding: 0; 
-			.row {
-				overflow: hidden; 
+
+			.row { 
+				margin: 0; 
 
 				.gallery-img {
-					position: relative; 
 					padding: 0; 
+					position: relative; 
 					overflow: hidden; 
-					width: 300px; 
-					height: 250px; 
 
-					.overlay{
 
-						content: '\A';
+
+
+					.overlay {
 						position: absolute;
+						display: block; 
+						background: $staticBlack;
+						opacity: 0.8;  
+						width: 250%; 
 						height: 100%; 
-						width: 100%; 
-						bottom: 0; right: 0;
-						background: $staticBlack; 
-						opacity: 0.9;
-						overflow: hidden; 	
-						bottom: 0; right: 0;
-						transition: all 1s;
-						-webkit-transition: all .6s ease-in-out;	
-
-						&:hover:after {
-							opacity: 1; 
-							bottom: 0; right: -150px;
-							width: 150%; height: 100%;
-							-webkit-transform: skew(-50deg);
-							-moz-transform: skew(-50deg);
-							-ms-transform: skew(-50deg);
-							-o-transform: skew(-50deg);
-							transform: skew(-50deg); 
+						bottom: 0; left: 0; right: 0; top: 0; 
+						transition: all 0.5s ease-in-out; 
+						&:hover {
+							opacity: 0.3; 
+							background: $staticBlack; 
+							width: 250%; 
+							height: 100%; 
+							right: -350px; bottom: 0; 
 						}
-
-			
 					}
-
-
 
 					.gallery-txt {
 						position: absolute; 
-						right: 15px; bottom: 5px; 
-						color: $white; 
+						color: $staticBlue; 
+						bottom: 10px; 
+						text-transform: uppercase; 
+						font-weight: 700;  
+						background: $white; 
+						right: 10px; 
+						padding: 5px; 
 					}
+
+
+
 
 				}
 			}
