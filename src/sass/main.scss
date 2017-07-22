@@ -9,7 +9,7 @@ $yellow: #F4D35E;
 $orangeHl: #E2711D; // orange
 $yellowHl: #E59500; // yellow
 $nightHl: #7F7EFF; // purple-blue
-
+$berry: #93032E; 
 
 
 body {
@@ -29,6 +29,21 @@ body {
 	em {
 		color: $highlightLight; 
 	}
+		.helloNoon {
+			color: $yellow; 
+		}
+
+		.helloMorning {
+			color: $highlightLight; 
+		}
+
+		.helloEvening {
+			color: $orangeHl; 
+		}
+
+		.helloNight {
+			color: $nightHl; 
+		}
 
 	h1, h2, h3, h4 {
 		font-family: 'Oswald', sans-serif;	
@@ -76,7 +91,7 @@ body {
   				padding-top: 2em; 
 
   				i {
-  					color: $highlightLight; 
+  					color: #555; 
   				}
   			}
 
@@ -86,7 +101,7 @@ body {
 				max-width: 550px;
 				a {
 					display: inline-block;
-					font-size: 2.3em;
+					font-size: 2em;
 					color: $highlightLight;
 					margin: 0 10px;
 					transform: rotateY(0deg);
@@ -111,6 +126,57 @@ body {
 
 	}
 
+}
+
+/* ==== ---- tooltips ---- ==== */
+[tooltip] {
+	position: relative; 
+	cursor: pointer; 
+
+	&:before, &:after {
+		position: absolute; 
+		visibility: hidden; 
+		opacity: 0; 
+		pointer-events: none; 
+		transition: all 0.2s cubic-bezier(0.5, 1, 0.25, 1); 
+		z-index: 1; 
+	}
+
+	&:before {
+		padding: 5px; 
+		width: 110px; 
+		border-radius: 3px; 
+		background: $staticBlack; 
+		color: #fff; 
+		content: attr(tooltip); 
+		text-align: center; 
+		font-size: 14px; 
+		font-weight: normal; 
+		line-height: 1.2; 
+      	bottom: 100%; 
+      	left: 50%; 
+      	margin-bottom: 5px; 
+      	transform: translateX(-50%); 
+	}
+
+	&:after {
+		border: 8px solid transparent; 
+		width: 0; 
+		content: ""; 
+		font-size: 0; 
+		line-height: 0; 
+      	bottom: 100%; 
+      	left: 50%; 
+      	transform: translateX(-50%); 
+      	border-top: 8px solid #000; 
+      	border-bottom: none; 
+	}
+
+	&:hover:before, &:hover:after {
+		visibility: visible; 
+		opacity: 1; 
+      	transform: translateX(-50%) translateY(-5px); 
+	}
 }
 
 	/* =================== MAIN CONTENT ==================*/ 
@@ -147,13 +213,14 @@ body {
 
 			p	{
 
+
 				#welcome {
 
 					line-height: 1.6em; 
 
 
 					span.gray {
-						color: #555; 
+						color: #404040; 
 						font-size: 1.6em; 
 					}
 				}				
@@ -164,6 +231,12 @@ body {
 		/* ========================= INFO ========================== */
 		#info {
 			padding: 2em 2em; 
+			font-size: 1.1em;
+			line-height: 1.5em;
+			p {
+				color: #606060; 
+			}
+
 		}
 
 
@@ -219,7 +292,7 @@ body {
 						height: 5em;  
 	 		
 
-						&:after {
+						/* &:after {
 						    content: '\A';
 						    position: absolute;
 						    border-radius: 100%; 
@@ -230,6 +303,7 @@ body {
 						    transition: all 1s;
 						    -webkit-transition: all 1s;
 						}
+
 
 						&:nth-child(1):hover:after, &:nth-child(2):hover:after {
 							background: rgb(236, 102, 43); // html5 orange
@@ -252,8 +326,10 @@ body {
 						}
 
 						&:hover:after {
-							cursor: help; 
-						}
+							
+						} */
+
+
 
 						img {
 							margin: 0; 
@@ -282,8 +358,122 @@ body {
 					overflow: hidden; 
 					transition: 0.5s all ease-in-out; 
 					&:hover {
-						transform: scale(1.01); 
+						
 					}
+
+					.screenshot {
+						position: relative; 
+						width: 300px; 
+						height: 250px; 
+						background-size: cover; 
+					}
+
+						&:nth-of-type(1) {
+							background-image: url('../images/projects/raw/flexPanels.png'); 
+							background-color: $berry; 
+							background-blend-mode: multiply; 
+						}
+
+						&:nth-of-type(2) {
+							background-image: url('../images/projects/raw/simpleCanvas.png'); 
+							background-color: $yellow; 
+							background-blend-mode: multiply; 
+						}
+
+						&:nth-of-type(3) {
+							background-image: url('../images/projects/raw/variables.png'); 
+							background-color: green; 
+							background-blend-mode: multiply; 
+						}
+
+						&:nth-of-type(4) {
+							background-image: url('../images/projects/raw/clock.png'); 
+							background-color: violet; 
+							background-blend-mode: multiply; 
+						}
+
+						&:nth-of-type(5) {
+							background-image: url('../images/projects/raw/bookmarkingApp.png'); 
+							background-color: red; 
+							background-blend-mode: multiply; 
+						}
+
+						&:nth-of-type(6) {
+							background-image: url('../images/projects/raw/scrollProgress.png'); 
+							background-color: red; 
+							background-blend-mode: multiply; 
+						}
+
+						&:nth-of-type(7) {
+							background-image: url('../images/projects/raw/accordion.png'); 
+							background-color: blue; 
+							background-blend-mode: multiply; 
+						}
+
+						&:nth-of-type(8) {
+							background-image: url('../images/projects/raw/iceCreamr.png'); 
+							background-color: red; 
+							background-blend-mode: multiply; 
+						}
+
+						&:nth-of-type(9) {
+							background-image: url('../images/projects/raw/stopwatch.png'); 
+							background-color: red; 
+							background-blend-mode: multiply; 
+						}
+
+						&:nth-of-type(10) {
+							background-image: url('../images/projects/raw/twitchAPI.png');  
+							background-color: blue; 
+							background-blend-mode: multiply; 
+						}
+
+						&:nth-of-type(11) {
+							background-image: url('../images/projects/raw/pricingTable.png'); 
+							background-color: red; 
+							background-blend-mode: multiply; 
+						}
+
+						&:nth-of-type(12) {
+							background-image: url('../images/projects/raw/crazyButton.png'); 
+							background-size: cover; 
+							background-color: red; 
+							background-blend-mode: multiply; 
+						}
+
+						&:nth-of-type(13) {
+							background-image: url('../images/projects/raw/wikipediaViewer.png');  
+							background-color: red; 
+							background-blend-mode: multiply; 
+						}
+
+						&:nth-of-type(14) {
+							background-image: url('../images/projects/raw/colorGame.png'); 
+							background-color: red; 
+							background-blend-mode: multiply; 
+						}
+						
+						&:nth-of-type(15) {
+							background-image: url('../images/projects/raw/todoList.png');  
+							background-color: red; 
+							background-blend-mode: multiply; 
+						}
+
+						&:nth-of-type(16) {
+							background-image: url('../images/projects/raw/checkboxes.png'); 
+							background-color: red; 
+							background-blend-mode: multiply; 
+						}
+
+						&:nth-of-type(1n) {
+							background-color: #47A8BD; 
+						}
+
+						&:nth-of-type(2n) {
+							background-color: $highlightLight; 
+						}
+
+					
 
 
 
@@ -306,41 +496,47 @@ body {
 					}
 
 					.gallery-txt {
-						position: relative; 
+						position: absolute; 
 						background: #222; 
-						height: 5em; 
+						width: 100%; 
+						height: 25px; 
+						bottom: 0; 
+						right: 0; 
 
 
 						.g-txt-head {
-							position: absolute; 
 							color: $staticBlue; 
 							bottom: 10px; 
 							text-transform: uppercase; 
 							font-weight: 700;  
-							background: $white; 
-							right: 10px; 
+							min-width: 300px; 
 							padding: 5px 10px; 
 							font-size: .8em; 
 							cursor: default;
 						}
 
 						.left {
-							position: absolute; 
-							bottom: 2px; 
-							left: 2px;
-							padding: 5px; 
-
+							float: right; 
+							position: relative;  
+							width: 100px; 
 
 
 
 							a {
-								font-size: 1.7em; 
-								color: $staticBlue; 
-								padding: 10px; 
+								background: $white; 
+								width: 30px;
 								text-align: center; 
-								transition: all 0.3s ease-in-out; 
+								height: 20px;  
+								position: absolute; 
+								bottom: 0; 
+								right: 0; 
+								bottom: -2px; 
+								font-size: 1.6em; 
+								color: $berry; 
+								transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1.666) all; 
 								&:hover {
-									color: $iceBlue; 
+									color: $highlightLight; 
+									height: 30px; 
 								}
 
 							}

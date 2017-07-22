@@ -2,7 +2,8 @@ var gulp = require('gulp'),
 	plugins = require('gulp-load-plugins')(),
 	browserSync = require('browser-sync').create(), 
     sass = require('gulp-ruby-sass'), 
-    notify = require("gulp-notify"); 
+    notify = require("gulp-notify"), 
+    imagemin = require('gulp-imagemin');
 
 
 
@@ -59,5 +60,17 @@ gulp.task('serve', function() {
 	gulp.watch('*.html').on('change', browserSync.reload);  
 }); 
 
+// run imagemin
+gulp.task('img', () =>
+	gulp.src('src/mg/*')
+		.pipe(imagemin([
+			imagemin.gifsicle({interlaced: true}),
+			imagemin.jpegtran({progressive: true}),
+			imagemin.optipng({optimizationLevel: 5}),
+			imagemin.svgo({plugins: [{removeViewBox: true}]})
+		]))
+		.pipe(gulp.dest('dist/images'))
+);
+
 // autorun
-gulp.task('default', ['css', 'js', 'watch', 'serve']); 
+gulp.task('default', ['css', 'js', 'img', 'watch', 'serve']); 

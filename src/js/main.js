@@ -1,3 +1,18 @@
+// CSS COLORS: 
+/*
+$white: #fff;
+$static: #40b9c7; 
+$bodyColor: #efefef; 
+$staticBlue: #40b9c7;
+$iceBlue: #C6D8D3; 
+$staticBlack: #171D1C; 
+$highlightLight: #F4827F; // pink
+$yellow: #F4D35E; 
+$orangeHl: #E2711D; // orange
+$yellowHl: #E59500; // yellow
+$nightHl: #7F7EFF; // purple-blue
+$berry: #93032E; 
+*/
 
 
 	// grab stuff
@@ -6,7 +21,10 @@
           canvas 	  	= document.querySelector('#canvas'),  
           greeting    	= document.querySelector('.greeting'),  
           hi 		  	= document.querySelector('.hi'),  
-          welcome		= document.querySelector('#welcome'), 
+          welcomeContain= document.querySelector('.welcome'),
+          welcome		= document.querySelector('#welcome'),
+          socials		= document.querySelectorAll('.social'),   
+          asterisks		= document.querySelectorAll('.asterix'), 
           time 		 	= new Date();  
 
 
@@ -25,29 +43,42 @@
     function displayGreeting() {
 
     	if(time.getHours() >= 0 && time.getHours() < 6) {
-    		greeting.innerHTML 	= 'Na, Sie <em>Nachteule</em>?'; 
+    		greeting.innerHTML 	= 'Na, Sie <em class="helloNight">Nachteule</em>?'; 
     		hi.innerHTML 		= 'Gute, aktive Nacht!';
     		welcome.innerHTML	= 'Sie haben sich also mitten in der <span class="gray">Nacht</span> auf meine Website verirrt. ';
-
+    		welcomeContain.style.backgroundColor = "#7F7EFF";
+    		socials.forEach(social => social.style.color	= '#7F7EFF');  
+    		asterisks.forEach(asterisk => asterisk.style.color	= '#7F7EFF'); 
 
     	} else if (time.getHours() >= 6 && time.getHours() < 12) {
-    		greeting.innerHTML	= '<em>Morgenstund</em> hat Gold im Mund!';
+    		greeting.innerHTML	= '<em class="helloMorning">Morgenstund</em> hat Gold im Mund!';
     		hi.innerHTML 		= 'Guten Morgen!'; 
     		welcome.innerHTML 	= 'Noch nicht mal <span class="gray">Mittag</span> und Sie haben schon meine Website gefunden. '; 
-
+			welcomeContain.style.backgroundColor = "#F4827F";
+    		socials.forEach(social => social.style.color	= '#F4827F');  
+    		asterisks.forEach(asterisk => asterisk.style.color	= '#F4827F');
 
     	} else if (time.getHours() >= 12 && time.getHours() < 18) {
-    		greeting.innerHTML 	= 'Lass die <em>Sonne</em> in dein Herz!'; 
+    		greeting.innerHTML 	= 'Lass die <em class="helloNoon">Sonne</em> in dein Herz!'; 
     		hi.innerHTML		= 'Guten Tag!'; 
     		welcome.innerHTML 	= 'Na, schon <span class="gray">Mittagpause</span> gehabt? Schön, dass Sie meine Website besuchen. '; 
-
+    		welcomeContain.style.backgroundColor = "#F4D35E";
+    		socials.forEach(social => social.style.color	= '#F4D35E');  
+    		asterisks.forEach(asterisk => asterisk.style.color	= '#F4D35E'); 
 
     	} else {
-    		greeting.innerHTML 	= '<em>Feierabend</em>, wie das duftet!';  
+    		greeting.innerHTML 	= '<em class="helloEvening">Feierabend</em>, wie das duftet!';  
     		hi.innerHTML 		= 'Guten Abend!'; 
     		welcome.innerHTML 	= 'Noch schnell zum <span class="gray">Feierabend</span> auf meiner Website vorbeischauen? Finde ich gut! '; 
+			welcomeContain.style.backgroundColor = "#E2711D";
+    		socials.forEach(social => social.style.color	= '#E2711D');  
+    		asterisks.forEach(asterisk => asterisk.style.color	= '#E2711D'); 
+
+
     	}
     } 
+
+
 
     // event listeners
     window.addEventListener('scroll', debounce(fillScrollLine));
