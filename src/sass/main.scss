@@ -1,6 +1,5 @@
 $white: #fff;
 $static: #40b9c7; 
-$bodyColor: #efefef; 
 $staticBlue: #40b9c7;
 $iceBlue: #C6D8D3; 
 $staticBlack: #171D1C; 
@@ -13,14 +12,13 @@ $berry: #93032E;
 
 
 body {
-	background: $bodyColor;
+	background: $staticBlack;
+	color: $white; 
 
 	&::-webkit-scrollbar {
     	display: none;
 	}
  
-
-
 
 	p {
 		font-family: 'Arimo', sans-serif;
@@ -69,6 +67,7 @@ body {
 		position: fixed;
 		height: 100vh; 
   		z-index: 999; 
+
 
   		.static-txt {
   			position: absolute; 
@@ -201,37 +200,196 @@ body {
 
 		/* ========================= INFO ========================== */
 		#info {
-			padding: 2em 2em; 
-			font-size: 1.1em;
-			line-height: 1.5em;
-			height: 80vh; 
+			color: $staticBlack; 
+			font-size: 1.3em;
+			line-height: 1.8em;
+			letter-spacing: 0.1em; 
 			position: relative; 
-			p {
-				color: #606060; 
+
+			.intro {
+				background: #fff; 
+				background: $white; 
+				color: $staticBlack; 
+				text-align: center; 
+				font-size: 0.7em; 
+				padding-bottom: .9em;  
+				margin: 0;
+
+				h2 {
+					font-size: 1.7em; 
+				}
+			}
+
+			// Accordion 
+
+				ul {
+					margin-bottom: 0;
+					padding: 10px; 
+				}
+
+				.accordion {
+					background: #fff;
+					margin: 0 auto;
+					padding: 30px;
+				}
+
+				.question {
+					border-bottom: 1px solid #efefef;
+					padding: 10px;
+					cursor: pointer;
+					position: relative;
+				}
+
+				.question h2 {
+					font-size: 20px;
+					margin: 0;
+					color: #A61C3C;
+				}
+
+				.question .glyphicon {
+					position: absolute;
+					right: 20px;
+					top: 0;
+					height: 100%;
+					display: flex;
+					align-items: center;
+				    transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+					color: #A61C3C;
+				}
+
+				.answer {
+					max-height: 0;
+					overflow: hidden;
+				    transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+				}
+
+				.answer p {
+					padding: 20px;
+				}
+
+				.accordion li.open .question .glyphicon {
+					transform: rotate(180deg);
+				}
+
+				.accordion li.open .answer {
+					max-height: 200px;
+				}
+
+			// end
+
+			.info-row {
+				text-align: center;
+				padding: 0; 
+				margin: 0;
+				background: #fff;  
+				min-height: 60vh; 
+				display: none; 
+
+				.info-item {
+					max-height: 30vh; 
+					position: relative; 
+
+					&:hover {
+						cursor: pointer; 
+					}
+
+					.info-img {
+						position: absolute;
+
+						&:after {
+							height: 100%; 
+							width: 100%;  
+						}
+
+					}
+
+					&:nth-child(1) {
+						background-image: url('https://images.pexels.com/photos/487867/pexels-photo-487867.jpeg?w=940&h=650&auto=compress&cs=tinysrgb');
+						background-size: cover;
+						background-color: #888; 
+						background-blend-mode: multiply; 
+					}
+
+					&:nth-child(2) {
+						background-image: url('https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg'); 
+						background-color: #888;
+						background-size: cover; 
+						background-blend-mode: multiply; 					
+
+					}
+
+					&:nth-child(3) {
+						background-image: url('https://images.pexels.com/photos/280264/pexels-photo-280264.jpeg?w=940&h=650&auto=compress&cs=tinysrgb');
+						background-size: cover; 
+						background-color: #888; 
+						background-blend-mode: multiply; 
+					}
+
+					&:nth-child(4) {
+						background-image: url('https://images.pexels.com/photos/163032/office-pen-calculator-computation-163032.jpeg?w=940&h=650&auto=compress&cs=tinysrgb'); 
+						background-color: #888; 
+						background-size: cover; 
+						background-blend-mode: multiply; 
+					}
+
+					&:nth-child(5) {
+						background-image: url('https://images.pexels.com/photos/272977/pexels-photo-272977.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb'); 
+						background-color: #888;
+						background-size: cover; 
+						background-blend-mode: multiply; 
+					}
+
+					&:nth-child(6) {
+						background-image: url('https://images.pexels.com/photos/439227/pexels-photo-439227.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb'); 
+						background-color: #888;
+						background-size: cover; 
+						background-blend-mode: multiply; 
+					}
+
+
+					.info-txt {
+						
+						h3 {
+							position: relative;
+							float: left;
+							top: 50%;
+							left: 50%;
+							transform: translate(-50%, -50%);
+						}
+
+						.flipped-txt {
+							display: none; 
+						}
+					}
+				}	
 			}
 			//
 			// Mouse
 			// --------------------------------------
 			.scroll {
-				position: absolute; 
-				left: 50%; 
-				bottom: -8%; 
+				background: $white;  
+				left: 0; 
+				bottom: 10px; 
+				height: 100px; 
+				width: 100%;  
+				text-align: center; 
 			}
 
 			.mouse-icon {
 			  position: relative;
+			  margin-bottom: 4em;  
 			  
 			  .mouse {
 			    width: 18px;
 			    height: 28px;
-			    background: #cdcdcd;
+			    background: $highlightLight;
 			    border-radius: 20px;
 			    position: relative;
 			    margin-bottom: 3px;
 
 			    &:after {
 			      content: "";
-			      background: #aaa;
+			      background: $berry;
 			      width: 4px;
 			      height: 6px;
 			      position: absolute;
@@ -247,8 +405,8 @@ body {
 			    width: 6px;
 			    height: 6px;
 			    display: block;
-			    border-bottom: 2px solid #aaa;
-			    border-right: 2px solid #aaa;
+			    border-bottom: 2px solid $berry;
+			    border-right: 2px solid $berry;
 			    transform: rotate(45deg);
 			    position: relative;
 			    margin: 0 auto;
@@ -295,10 +453,27 @@ body {
 
 		/* ======================== SKILLS ========================= */
 		#skills {
-			padding: 20px; 
+			padding: 20px 0; 
 			margin: 0; 
 			background: $white; 
-			
+			color: $staticBlack; 
+
+			.intro {
+				background: #fff; 
+				background: $white; 
+				color: $staticBlack; 
+				text-align: center; 
+				font-size: 1em; 
+				padding-bottom: .9em;  
+				margin: 0;
+
+				h2 {
+					font-size: 1.7em;
+					letter-spacing: 0.1em;  
+				}
+			}
+
+
 			.row {
 				margin-top: 1em; 
 				text-align: center; 
@@ -320,11 +495,21 @@ body {
 		/* ========================= KNOWLEDGE ======================== */ 
 		#knowledge {
 			background: #ddd;
-			padding: 10px; 
 
-			#knowledge-img {
+			.intro {
+				background: #fff; 
+				background: $white; 
+				color: $staticBlack; 
+				text-align: center; 
+				font-size: 1em; 
+				padding-bottom: .9em;  
+				margin: 0;
 
-			} 
+				h2 {
+					font-size: 1.7em;
+					letter-spacing: 0.1em;  
+				}
+			}
 
 			.badges {
 
@@ -451,6 +636,21 @@ body {
 		#gallery {
 			background: $staticBlack; 
 			padding: 0; 
+
+			.intro {
+				background: #fff; 
+				background: $white; 
+				color: $staticBlack; 
+				text-align: center; 
+				font-size: 1em; 
+				padding-bottom: .9em;  
+				margin: 0;
+
+				h2 {
+					font-size: 1.7em;
+					letter-spacing: 0.1em;  
+				}
+			}	
 
 			.row { 
 				margin: 0; 
@@ -659,6 +859,9 @@ body {
 
 
 		/* ======================== CONTACT ======================== */ 
+		#contact {
+			padding: 2em; 
+		}
 
 	}
 
