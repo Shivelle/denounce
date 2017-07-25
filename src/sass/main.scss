@@ -201,10 +201,12 @@ body {
 		/* ========================= INFO ========================== */
 		#info {
 			color: $staticBlack; 
+			background: $white; 
 			font-size: 1.3em;
 			line-height: 1.8em;
 			letter-spacing: 0.1em; 
 			position: relative; 
+			height: 80vh; 
 
 			.intro {
 				background: #fff; 
@@ -218,6 +220,12 @@ body {
 				h2 {
 					font-size: 1.7em; 
 				}
+			}
+
+			#main-info {
+				padding: 2em; 
+				font-size: 0.9em; 
+				text-align: justify; 
 			}
 
 

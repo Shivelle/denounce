@@ -69,7 +69,7 @@ $berry: #93032E;
     	} else {
     		greeting.innerHTML 	= '<em class="helloEvening">Feierabend</em>, wie das duftet!';  
     		hi.innerHTML 		= 'Guten Abend!'; 
-    		welcome.innerHTML 	= 'Noch schnell zum <span class="gray">Feierabend</span> auf meiner Website vorbeischauen? Finde ich gut! '; 
+    		welcome.innerHTML 	= 'Noch schnell zum <span class="gray">Feierabend</span> auf meiner Website vorbeischauen? '; 
 			welcomeContain.style.backgroundColor = "#E2711D";
     		socials.forEach(social => social.style.color	= '#E2711D');  
     		asterisks.forEach(asterisk => asterisk.style.color	= '#E2711D'); 
