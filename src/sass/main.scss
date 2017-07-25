@@ -220,149 +220,8 @@ body {
 				}
 			}
 
-			// Accordion 
-
-				ul {
-					margin-bottom: 0;
-					padding: 10px; 
-				}
-
-				.accordion {
-					background: #fff;
-					margin: 0 auto;
-					padding: 30px;
-				}
-
-				.question {
-					border-bottom: 1px solid #efefef;
-					padding: 10px;
-					cursor: pointer;
-					position: relative;
-				}
-
-				.question h2 {
-					font-size: 20px;
-					margin: 0;
-					color: #A61C3C;
-				}
-
-				.question .glyphicon {
-					position: absolute;
-					right: 20px;
-					top: 0;
-					height: 100%;
-					display: flex;
-					align-items: center;
-				    transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
-					color: #A61C3C;
-				}
-
-				.answer {
-					max-height: 0;
-					overflow: hidden;
-				    transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
-				}
-
-				.answer p {
-					padding: 20px;
-				}
-
-				.accordion li.open .question .glyphicon {
-					transform: rotate(180deg);
-				}
-
-				.accordion li.open .answer {
-					max-height: 200px;
-				}
-
-			// end
-
-			.info-row {
-				text-align: center;
-				padding: 0; 
-				margin: 0;
-				background: #fff;  
-				min-height: 60vh; 
-				display: none; 
-
-				.info-item {
-					max-height: 30vh; 
-					position: relative; 
-
-					&:hover {
-						cursor: pointer; 
-					}
-
-					.info-img {
-						position: absolute;
-
-						&:after {
-							height: 100%; 
-							width: 100%;  
-						}
-
-					}
-
-					&:nth-child(1) {
-						background-image: url('https://images.pexels.com/photos/487867/pexels-photo-487867.jpeg?w=940&h=650&auto=compress&cs=tinysrgb');
-						background-size: cover;
-						background-color: #888; 
-						background-blend-mode: multiply; 
-					}
-
-					&:nth-child(2) {
-						background-image: url('https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg'); 
-						background-color: #888;
-						background-size: cover; 
-						background-blend-mode: multiply; 					
-
-					}
-
-					&:nth-child(3) {
-						background-image: url('https://images.pexels.com/photos/280264/pexels-photo-280264.jpeg?w=940&h=650&auto=compress&cs=tinysrgb');
-						background-size: cover; 
-						background-color: #888; 
-						background-blend-mode: multiply; 
-					}
-
-					&:nth-child(4) {
-						background-image: url('https://images.pexels.com/photos/163032/office-pen-calculator-computation-163032.jpeg?w=940&h=650&auto=compress&cs=tinysrgb'); 
-						background-color: #888; 
-						background-size: cover; 
-						background-blend-mode: multiply; 
-					}
-
-					&:nth-child(5) {
-						background-image: url('https://images.pexels.com/photos/272977/pexels-photo-272977.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb'); 
-						background-color: #888;
-						background-size: cover; 
-						background-blend-mode: multiply; 
-					}
-
-					&:nth-child(6) {
-						background-image: url('https://images.pexels.com/photos/439227/pexels-photo-439227.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb'); 
-						background-color: #888;
-						background-size: cover; 
-						background-blend-mode: multiply; 
-					}
 
 
-					.info-txt {
-						
-						h3 {
-							position: relative;
-							float: left;
-							top: 50%;
-							left: 50%;
-							transform: translate(-50%, -50%);
-						}
-
-						.flipped-txt {
-							display: none; 
-						}
-					}
-				}	
-			}
 			//
 			// Mouse
 			// --------------------------------------
@@ -510,75 +369,96 @@ body {
 					letter-spacing: 0.1em;  
 				}
 			}
+			// Accordion 
 
-			.badges {
+				ul {
+					margin-bottom: 0;
+					padding: 10px; 
+				}
 
+				.accordion {
+					background: #fff;
+					margin: 0 auto;
+					padding: 30px;
+				}
 
-				.row {
-					text-align: center; 
-					margin: 0 auto; 
-					padding: 0; 
+				.question {
+					border-bottom: 1px solid #efefef;
+					padding: 10px;
+					cursor: pointer;
+					position: relative;
+				}
 
-					.course-badge {
-						display: inline-block; 
-						float: none; 
-						text-align: left; 
-						position: relative; 
-						margin: 0.7em 0.5em; 
-						padding: 0; 
-						width: 5em; 
-						height: 5em;  
-	 		
+				.question h2 {
+					font-size: 20px;
+					margin: 0;
+					color: $staticBlack;
+				}
 
-						/* &:after {
-						    content: '\A';
-						    position: absolute;
-						    border-radius: 100%; 
-						    width: 100%; height:100%;
-						    top:0; left:0;
-						    background: rgba(0,0,0,.3); 
-						    opacity: .7;
-						    transition: all 1s;
-						    -webkit-transition: all 1s;
-						}
+				.question .glyphicon {
+					position: absolute;
+					right: 20px;
+					top: 0;
+					height: 100%;
+					display: flex;
+					align-items: center;
+				    transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+					color: #A61C3C;
+				}
 
+				.answer {
+					max-height: 0;
+					overflow: hidden;
+				    transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+				}
 
-						&:nth-child(1):hover:after, &:nth-child(2):hover:after {
-							background: rgb(236, 102, 43); // html5 orange
-						}
+				.answer p {
+					padding: 20px;
+					color: $staticBlack; 
+				}
 
-						&:nth-child(3):hover:after, &:nth-child(4):hover:after {
-							background: rgb(105, 92, 172); // design violet
-						}
+				.accordion li.open .question .glyphicon {
+					transform: rotate(180deg);
+				}
 
-						&:nth-child(5):hover:after {
-						   	background: rgb(0, 156, 221); // css blue
-						}
+				.accordion li.open .answer {
+					max-height: 80vh;
+				}
 
-						&:nth-child(6):hover:after {
-							background: rgb(204, 0, 0); // rails red
-						}
+				#codeschool {
 
-						&:nth-child(7):hover:after, &:nth-child(8):hover:after, &:nth-child(9):hover:after {
-							background: rgb(240, 218, 80); //js yellow
-						}
-
-						&:hover:after {
-							
-						} */
-
-
-
-						img {
-							margin: 0; 
-							width: 100%; 
-							height: auto; 
+					.badges {
+						padding: 2em; 
+						
+						.row {
 							text-align: center; 
-							filter: grayscale(100%);
+							margin: 0 auto; 
+							padding: 0; 
+
+							.course-badge {
+								display: inline-block; 
+								float: none; 
+								text-align: left; 
+								position: relative; 
+								margin: 0.7em 0.5em; 
+								padding: 0; 
+								width: 5em; 
+								height: 5em;  
+			 		
+								img {
+									margin: 0; 
+									width: 100%; 
+									height: auto; 
+									text-align: center; 
+									filter: grayscale(100%);
+								}
+							}
 						}
 					}
 				}
-			}
+
+			// end
+
 		}
 
 			/* ==== ---- tooltips ---- ==== */
@@ -592,7 +472,7 @@ body {
 					opacity: 0; 
 					pointer-events: none; 
 					transition: all 0.2s cubic-bezier(0.5, 1, 0.25, 1); 
-					z-index: 1; 
+					z-index: 5; 
 				}
 
 				&:before {
@@ -861,6 +741,68 @@ body {
 		/* ======================== CONTACT ======================== */ 
 		#contact {
 			padding: 2em; 
+			color: $staticBlack; 
+			background: $white; 
+			margin-top: 1em; 
+
+			#gform {
+
+				.contact-story {
+					position: relative;
+					font-size: 1.2em; 
+
+					.form-control { 
+						background: $staticBlue;
+						opacity: 0.5;  
+						color: $white; 
+						border-radius: 0; 
+						margin: 0.5em 0; 
+						border: none; 
+						box-shadow: none; 
+
+						&::-webkit-input-placeholder { 
+						  background: pink;
+						  height: 50px;  
+						}
+					}
+
+					#heySarah {
+						.hi {
+							font-size: 2.5em; 
+							text-transform: uppercase; 
+						}
+					}
+
+					#inputName {
+						position: absolute; 
+						top: 50px;
+						left: 125px;  
+						width: 150px; 
+						height: 25px; 
+					}
+
+					#msg {
+
+					}
+
+					#inputText {
+						display: block; 
+					}
+
+					#inputEmail {
+						width: 200px;
+						height: 25px;  
+					}
+
+				}
+
+				#submit {
+					background: $staticBlue;
+					border: none; 
+					border-radius: 0; 
+					font-size: 1.7em;  
+				}
+			}
 		}
 
 	}
