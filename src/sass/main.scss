@@ -9,6 +9,20 @@ $orangeHl: #E2711D; // orange
 $yellowHl: #E59500; // yellow
 $nightHl: #7F7EFF; // purple-blue
 $berry: #93032E; 
+$morning: #3DDC97; // türkis
+// $morning: #8CD867; // green
+// $morning: #DB74B0; // pink
+// $morning: #F4A261; // warm orange
+
+
+* {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  box-sizing: border-box;
+}
 
 
 body {
@@ -19,6 +33,14 @@ body {
     	display: none;
 	}
  
+	a {
+		color: $staticBlue; 
+
+		&:hover {
+			text-decoration: none; 
+
+		}
+	}
 
 	p {
 		font-family: 'Arimo', sans-serif;
@@ -29,21 +51,25 @@ body {
 	}
 		.helloNoon {
 			color: $yellow; 
+			padding-right: 5px; 
 		}
 
 		.helloMorning {
-			color: $highlightLight; 
+			color: $morning; 
+			padding-right: 5px; 
 		}
 
 		.helloEvening {
 			color: $orangeHl; 
+			padding-right: 5px; 
 		}
 
 		.helloNight {
 			color: $nightHl; 
+			padding-right: 5px; 
 		}
 
-	h1, h2, h3, h4 {
+	h1, h2, h3, h4, .cta {
 		font-family: 'Oswald', sans-serif;	
 	}
 
@@ -87,10 +113,11 @@ body {
 
   			p {
   				color: lightgray; 
+  				font-size: 1.2em; 
   				padding-top: 2em; 
 
-  				i {
-  					color: #555; 
+  				.asterix {
+  					color: $staticBlue; 
   				}
   			}
 
@@ -101,7 +128,7 @@ body {
 				a {
 					display: inline-block;
 					font-size: 2em;
-					color: $highlightLight;
+					color: $staticBlue;
 					margin: 0 10px;
 					transform: rotateY(0deg);
 					transition: transform 0.2s ease-in-out, color 0.2s linear;
@@ -112,7 +139,18 @@ body {
 					}
 				}
 			}
-
+			.cta {
+				background: $morning; 
+				color: $staticBlack; 
+				border-radius: 0;
+				text-transform: uppercase;  
+				margin-top: 20px; 
+				font-size: 2em; 
+				transition: all 0.5s ease-in-out; 
+				&:hover {
+					background: $staticBlue; 
+				}
+			}
   		}
 
   		#canvas {
@@ -128,22 +166,22 @@ body {
 }
 
 /* ==== ---- animated interactivity icons ---- ==== */ 
-.icon {
-  display: inline-block;
-  margin: 20px auto;
-  height: 200px;
-  vertical-align: top;
-  position: relative;
-}
+			.icon {
+			  display: inline-block;
+			  margin: 20px auto;
+			  height: 200px;
+			  vertical-align: top;
+			  position: relative;
+			}
 
-.icon-wrapper {
-  display: inline-block;
-  vertical-align: middle;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+			.icon-wrapper {
+			  display: inline-block;
+			  vertical-align: middle;
+			  position: absolute;
+			  top: 50%;
+			  left: 50%;
+			  transform: translate(-50%, -50%);
+			}
 
 
 
@@ -171,7 +209,7 @@ body {
 
 		/* ==================== WELCOME ==========================*/ 
 		.welcome {
-			background-color: $highlightLight;  
+			background-color: $staticBlue;  
 			color: $white;
 			padding: 3em 2em; 
 			text-align: center; 
@@ -179,7 +217,7 @@ body {
 			letter-spacing: .1em;  
 			line-height: 1.4em; 
 			position: relative; 
-			height: 20vh; 
+			height: 9em; 
 
 			p	{
 
@@ -190,7 +228,7 @@ body {
 
 
 					span.gray {
-						color: #404040; 
+						color: $staticBlack; 
 						font-size: 1.6em; 
 					}
 				}				
@@ -206,7 +244,6 @@ body {
 			line-height: 1.8em;
 			letter-spacing: 0.1em; 
 			position: relative; 
-			height: 80vh; 
 
 			.intro {
 				background: #fff; 
@@ -218,7 +255,10 @@ body {
 				margin: 0;
 
 				h2 {
-					font-size: 1.7em; 
+					text-align: center; 
+					padding-top: 1em; 
+					font-size: 2em;
+					letter-spacing: 0.1em;  
 				}
 			}
 
@@ -234,29 +274,27 @@ body {
 			// Mouse
 			// --------------------------------------
 			.scroll {
-				background: $white;  
-				left: 0; 
-				bottom: 10px; 
-				height: 100px; 
-				width: 100%;  
+				height: 50px; 
+				width: 50px; 
+				position: fixed; 
+				top: 80%;  
 				text-align: center; 
 			}
 
 			.mouse-icon {
-			  position: relative;
-			  margin-bottom: 4em;  
+				position: relative; 
 			  
 			  .mouse {
 			    width: 18px;
 			    height: 28px;
-			    background: $highlightLight;
+			    background: $iceBlue;
 			    border-radius: 20px;
 			    position: relative;
 			    margin-bottom: 3px;
 
 			    &:after {
 			      content: "";
-			      background: $berry;
+			      background: $staticBlue;
 			      width: 4px;
 			      height: 6px;
 			      position: absolute;
@@ -272,8 +310,8 @@ body {
 			    width: 6px;
 			    height: 6px;
 			    display: block;
-			    border-bottom: 2px solid $berry;
-			    border-right: 2px solid $berry;
+			    border-bottom: 2px solid $staticBlue;
+			    border-right: 2px solid $staticBlue;
 			    transform: rotate(45deg);
 			    position: relative;
 			    margin: 0 auto;
@@ -323,7 +361,10 @@ body {
 			padding: 20px 0; 
 			margin: 0; 
 			background: $white; 
-			color: $staticBlack; 
+			color: $staticBlack;
+			font-size: 1.1em;
+			line-height: 1.8em;
+			letter-spacing: 0.1em;  
 
 			.intro {
 				background: #fff; 
@@ -335,14 +376,17 @@ body {
 				margin: 0;
 
 				h2 {
-					font-size: 1.7em;
+					text-align: center; 
+					padding-bottom: 0.5em; 
+					font-size: 2em;
 					letter-spacing: 0.1em;  
 				}
 			}
 
 
 			.row {
-				margin-top: 1em; 
+				margin: 2em auto; 
+				padding-left: 2em; 
 				text-align: center; 
 
 				.skill-icon {
@@ -352,7 +396,8 @@ body {
 					margin-bottom: 2em; 
 					
 					i {
-						font-size: 4em;
+						color: $staticBlue; 
+						font-size: 3.8em;
 					}
 				}
 			}
@@ -367,12 +412,16 @@ body {
 				background: #fff; 
 				background: $white; 
 				color: $staticBlack; 
-				text-align: center; 
-				font-size: 1em; 
-				padding-bottom: .9em;  
+				text-align: justify; 
+				font-size: 1.3em;
+				line-height: 1.8em;
+				letter-spacing: 0.1em;  
+				padding: 1em 2.5em;  
 				margin: 0;
 
 				h2 {
+					text-align: center; 
+					padding-bottom: 1em; 
 					font-size: 1.7em;
 					letter-spacing: 0.1em;  
 				}
@@ -395,6 +444,15 @@ body {
 					padding: 10px;
 					cursor: pointer;
 					position: relative;
+
+					h2 {
+						font-size: 4em; 
+					}
+
+					.listSpecial {
+						color: $staticBlue; 
+						font-size: 1.25em; 
+					}
 				}
 
 				.question h2 {
@@ -411,26 +469,41 @@ body {
 					display: flex;
 					align-items: center;
 				    transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
-					color: #A61C3C;
+					color: $staticBlue;
 				}
 
 				.answer {
-					max-height: 0;
+					max-height: 0; 
 					overflow: hidden;
 				    transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+					p {
+						padding: 20px;
+						color: $staticBlack; 
+						font-size: 1.3em;
+						line-height: 1.8em;
+						letter-spacing: 0.1em; 
+
+					}
+
+					ul {
+						padding: 0 3em 2em 3em; 
+						li {
+							padding: 3px 0; 
+							a {
+								font-size: 1.2em; 
+							}
+						}
+					}
 				}
 
-				.answer p {
-					padding: 20px;
-					color: $staticBlack; 
-				}
+
 
 				.accordion li.open .question .glyphicon {
 					transform: rotate(180deg);
 				}
 
 				.accordion li.open .answer {
-					max-height: 80vh;
+					max-height: 100vh;
 				}
 
 				#codeschool {
@@ -535,7 +608,9 @@ body {
 				margin: 0;
 
 				h2 {
-					font-size: 1.7em;
+					text-align: center; 
+					padding-bottom: 1em; 
+					font-size: 2em;
 					letter-spacing: 0.1em;  
 				}
 			}	
@@ -562,107 +637,90 @@ body {
 
 						&:nth-of-type(1) {
 							background-image: url('../images/projects/raw/flexPanels.png'); 
-							background-color: $berry; 
 							background-blend-mode: multiply; 
 						}
 
 						&:nth-of-type(2) {
-							background-image: url('../images/projects/raw/simpleCanvas.png'); 
-							background-color: $yellow; 
+							background-image: url('../images/projects/raw/simpleCanvas.png');
 							background-blend-mode: multiply; 
 						}
 
 						&:nth-of-type(3) {
 							background-image: url('../images/projects/raw/variables.png'); 
-							background-color: green; 
 							background-blend-mode: multiply; 
 						}
 
 						&:nth-of-type(4) {
 							background-image: url('../images/projects/raw/clock.png'); 
-							background-color: violet; 
 							background-blend-mode: multiply; 
 						}
 
 						&:nth-of-type(5) {
 							background-image: url('../images/projects/raw/bookmarkingApp.png'); 
-							background-color: red; 
 							background-blend-mode: multiply; 
 						}
 
 						&:nth-of-type(6) {
-							background-image: url('../images/projects/raw/scrollProgress.png'); 
-							background-color: red; 
+							background-image: url('../images/projects/raw/scrollProgress.png');  
 							background-blend-mode: multiply; 
 						}
 
 						&:nth-of-type(7) {
 							background-image: url('../images/projects/raw/accordion.png'); 
-							background-color: blue; 
 							background-blend-mode: multiply; 
 						}
 
 						&:nth-of-type(8) {
 							background-image: url('../images/projects/raw/iceCreamr.png'); 
-							background-color: red; 
 							background-blend-mode: multiply; 
 						}
 
 						&:nth-of-type(9) {
 							background-image: url('../images/projects/raw/stopwatch.png'); 
-							background-color: red; 
 							background-blend-mode: multiply; 
 						}
 
 						&:nth-of-type(10) {
 							background-image: url('../images/projects/raw/twitchAPI.png');  
-							background-color: blue; 
 							background-blend-mode: multiply; 
 						}
 
 						&:nth-of-type(11) {
 							background-image: url('../images/projects/raw/pricingTable.png'); 
-							background-color: red; 
 							background-blend-mode: multiply; 
 						}
 
 						&:nth-of-type(12) {
 							background-image: url('../images/projects/raw/crazyButton.png'); 
-							background-size: cover; 
-							background-color: red; 
 							background-blend-mode: multiply; 
 						}
 
 						&:nth-of-type(13) {
 							background-image: url('../images/projects/raw/wikipediaViewer.png');  
-							background-color: red; 
 							background-blend-mode: multiply; 
 						}
 
 						&:nth-of-type(14) {
 							background-image: url('../images/projects/raw/colorGame.png'); 
-							background-color: red; 
 							background-blend-mode: multiply; 
 						}
 						
 						&:nth-of-type(15) {
 							background-image: url('../images/projects/raw/todoList.png');  
-							background-color: red; 
 							background-blend-mode: multiply; 
 						}
 
 						&:nth-of-type(16) {
-							background-image: url('../images/projects/raw/checkboxes.png'); 
-							background-color: red; 
+							background-image: url('../images/projects/raw/checkboxes.png');  
 							background-blend-mode: multiply; 
 						}
 
 						&:nth-of-type(1n) {
-							background-color: #47A8BD; 
+							background-color: $staticBlue; 
 						}
 
 						&:nth-of-type(2n) {
-							background-color: $highlightLight; 
+							background-color: $white; 
 						}
 
 					
@@ -748,78 +806,106 @@ body {
 
 		/* ======================== CONTACT ======================== */ 
 		#contact {
-			padding: 2em; 
-			color: $staticBlack; 
-			background: $white; 
-			margin-top: 1em; 
+			padding: 4em 2em; 
+			background: $staticBlue;  
 
-			#gform {
+			.contact {
+				text-align: left; 				
+				
+				.row {
+					
+					
+					.talk {
+					  text-align: right;
 
-				.contact-story {
-					position: relative;
-					font-size: 1.2em; 
+					    .thin-line {
+						    font-size: 1.6em;
+						  }
+						  .thick-line {
+						    font-size: 2em;
+						  }
+					} 
 
-					.form-control { 
-						background: $staticBlue;
-						opacity: 0.5;  
-						color: $white; 
-						border-radius: 0; 
-						margin: 0.5em 0; 
-						border: none; 
-						box-shadow: none; 
+					#gform {
 
-						&::-webkit-input-placeholder { 
-						  background: pink;
-						  height: 50px;  
+							.form-control { 
+								opacity: 0.5;  
+								max-width: 18em; 
+								color: $white; 
+								border-radius: 0; 
+								border: none; 
+								box-shadow: none;
+								color: #232323;
+								font-weight: 500;
+								font-size: 18px;
+								line-height: 22px;
+								background-color: transparent;
+		
+								border-bottom: 1px solid $white;
+								transition: all 0.3s;
+								padding: 13px;
+								margin-bottom: 15px;
+								width: 25em;
+								box-sizing: border-box;
+								outline: 0; 
+								overflow: hidden; 
+
+								&::-webkit-input-placeholder { 
+								  background: pink;
+								  height: 50px;  
+								}
+							}
+
+							#nameLabel {
+
+							}
+
+							#inputName {
+
+							}
+
+							#msgLabel {
+
+							}
+
+							#inputMsg {
+								display: block; 
+							}
+
+							#inputEmail {
+			  
+							}
+
+
+						#submit {
+							background: $staticBlack;
+							border: none; 
+							border-radius: 0; 
+							font-size: 1.7em;  
+						  	width: 18em; 
+						  	border: none;
+						  	cursor: pointer;
+						  	color: white;
+						  	font-size: 24px;
+						  	padding-top: 10px;
+						  	padding-bottom: 10px;
+						  	transition: all 0.2s ease-in-out;
+						  	margin-top: -4px;
+						  	font-weight: 700;
+						  	text-transform: uppercase;
+
+						  	&:hover {
+						  		background: #1e1e1e;
+						  	}
 						}
 					}
-
-					#heySarah {
-						.hi {
-							font-size: 2.5em; 
-							text-transform: uppercase; 
-						}
-					}
-
-					#inputName {
-						position: absolute; 
-						top: 50px;
-						left: 125px;  
-						width: 150px; 
-						height: 25px; 
-					}
-
-					#msg {
-
-					}
-
-					#inputText {
-						display: block; 
-					}
-
-					#inputEmail {
-						width: 200px;
-						height: 25px;  
-					}
-
 				}
 
-				#submit {
-					background: $staticBlue;
-					border: none; 
-					border-radius: 0; 
-					font-size: 1.7em;  
-				}
 			}
 		}
-
 	}
 
-
 }
-
-
-
 
 
 

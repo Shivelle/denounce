@@ -46,10 +46,16 @@
 					</p>
 					</div><!-- /social-icons -->
 
+					<button class="btn btn-lg cta">auf ein wort</button>
+
 				</div><!-- /.static-txt -->
 				<canvas id="canvas"></canvas>
 
 			</div><!-- /.static -->
+
+
+
+
 
 
 			<!-- ===== RIGHT ===== -->
@@ -94,7 +100,7 @@
 
 
 				</div>
-				<div class="container-fluid scroll">	
+				<div class="scroll">	
 					<div class="icon">
 					  <div class="icon-wrapper">
 					    <div class="mouse-icon">
@@ -225,7 +231,7 @@
 
 			      <li class="open">
 			        <div class="question">
-			          <h2>Udemy</h2>
+			          <h2><span class="listSpecial">>_</span> Udemy</h2>
 			          <span class="glyphicon glyphicon-chevron-down"></span>
 			        </div>
 			        <!-- /.question -->
@@ -250,7 +256,7 @@
 
 			      <li>
 			        <div class="question">
-			          <h2>Codecademy</h2>
+			          <h2><span class="listSpecial">>_</span> Codecademy</h2>
 			          <span class="glyphicon glyphicon-chevron-down"></span>
 			        </div>
 			        <!-- /.question -->
@@ -306,7 +312,7 @@
 
 			      <li>
 			        <div class="question">
-			          <h2>>_ noCode</h2>
+			          <h2><span class="listSpecial">>_</span> noCode</h2>
 			          <span class="glyphicon glyphicon-chevron-down"></span>
 			        </div>
 			        <!-- /.question -->
@@ -558,29 +564,51 @@
 			<!-- ===== CONTACT ===== -->	
 			<section id="contact">
 
+			    <div class="container contact">
+			      <div class="row">
+			        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 talk">
+			          <h2><span class="thin-line">Reden</span><br><span class="thick-line">wir!</span></h2>
+			          <p>Ich bin derezeit offen für Projekt-<br> und Jobangebote</p>
+			        </div>
+			        <!-- /col -->
 
-			<form id="gform" method="POST"
-			action="https://script.google.com/macros/s/AKfycbyEvjVfF2B7H3KhKF0yVf1uaeRXlFjQYEJsYlp6SlnxBV2AzgNU/exec">
-			
-			<div class="contact-story">
+			        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+			          <div class="container contactForm">
+						<form id="gform" method="POST"
+						action="https://script.google.com/macros/s/AKfycbyEvjVfF2B7H3KhKF0yVf1uaeRXlFjQYEJsYlp6SlnxBV2AzgNU/exec">
+						
+						<div class="contact-story">
 
-	
-				    <label for="name" class="form-txt" id="heySarah"><span class="hi">Hey Sarah! </span><br> Mein Name ist</label>
-				    <input type="name" name="name" class="form-control" id="inputName" placeholder="" required>
+				
+							    <label for="name" class="form-txt" id="nameLabel">Name</span></label>
+							    <input type="name" name="name" class="form-control" id="inputName" placeholder="" required>
 
-				    <label for="text" class="textarea" id="msg">
-				    Wir sollten unbedingt mal telefonieren, denn </label>
-				    <textarea type="text" name="message" class="form-control" id="inputText" placeholder="" required></textarea>
-
-
-				    <label for="email" class="form-txt" id="email">Sie erreichen mich/uns unter: </label>
-				    <input type="email" name="email" class="form-control" id="inputEmail" placeholder="" required>
-
-			</div><!-- /.contact-story -->
+							    <label for="text" class="textarea" id="msgLabel">
+							    Nachricht</label>
+							    <textarea type="text" name="message" class="form-control" id="inputMsg" placeholder="" required autocorrect=off autocapitalize=words></textarea>
 
 
-			  <button id="submit" type="submit" class="btn btn-success">fertig</button>
-			</form>
+							    <label for="email" class="form-txt" id="email">Email </label>
+							    <input type="email" name="email" class="form-control" id="inputEmail" placeholder="" required autocorrect=off autocapitalize=words>
+
+						</div><!-- /.contact-story -->
+
+
+						  <button id="submit" type="submit" class="btn btn-success" value=Send>fertig</button>
+						</form>
+
+			          </div>
+			          <!-- /.contactForm -->
+			        </div><!-- /.col-->
+			      </div><!-- /.row -->
+			    </div><!-- /.container -->
+
+
+
+
+
+
+
 
 			</section>	
 

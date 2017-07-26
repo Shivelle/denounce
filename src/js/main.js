@@ -21,10 +21,8 @@ $berry: #93032E;
           canvas 	  	= document.querySelector('#canvas'),  
           greeting    	= document.querySelector('.greeting'),  
           hi 		  	= document.querySelector('.hi'),  
-          welcomeContain= document.querySelector('.welcome'),
+          scrollMouse	= document.querySelector('.mouse'),
           welcome		= document.querySelector('#welcome'),
-          socials		= document.querySelectorAll('.social'),   
-          asterisks		= document.querySelectorAll('.asterix'), 
           time 		 	= new Date();  
 
 
@@ -38,6 +36,15 @@ $berry: #93032E;
       const scrolled        = window.scrollY;
       const percentScrolled = (scrolled / (fullHeight - windowHeight)) * 50;
       scrollLine.style.width = `${percentScrolled}%`;
+
+       
+      // toggle mouse on scroll 
+      if (percentScrolled > 25 ) {
+      	scrollMouse.style.display = 'none'; 
+      } else {
+      	scrollMouse.style.display = 'block';
+      }
+
     }
 
     function displayGreeting() {
@@ -46,34 +53,22 @@ $berry: #93032E;
     		greeting.innerHTML 	= 'Na, Sie <em class="helloNight">Nachteule</em>?'; 
     		hi.innerHTML 		= 'Gute, aktive Nacht!';
     		welcome.innerHTML	= 'Sie haben sich also mitten in der <span class="gray">Nacht</span> auf meine Website verirrt. ';
-    		welcomeContain.style.backgroundColor = "#7F7EFF";
-    		socials.forEach(social => social.style.color	= '#7F7EFF');  
-    		asterisks.forEach(asterisk => asterisk.style.color	= '#7F7EFF'); 
+
 
     	} else if (time.getHours() >= 6 && time.getHours() < 12) {
     		greeting.innerHTML	= '<em class="helloMorning">Morgenstund</em> hat Gold im Mund!';
     		hi.innerHTML 		= 'Guten Morgen!'; 
     		welcome.innerHTML 	= 'Noch nicht mal <span class="gray">Mittag</span> und Sie haben schon meine Website gefunden. '; 
-			welcomeContain.style.backgroundColor = "#F4827F";
-    		socials.forEach(social => social.style.color	= '#F4827F');  
-    		asterisks.forEach(asterisk => asterisk.style.color	= '#F4827F');
 
     	} else if (time.getHours() >= 12 && time.getHours() < 18) {
     		greeting.innerHTML 	= 'Lass die <em class="helloNoon">Sonne</em> in dein Herz!'; 
     		hi.innerHTML		= 'Guten Tag!'; 
     		welcome.innerHTML 	= 'Na, schon <span class="gray">Mittagpause</span> gehabt? Schön, dass Sie meine Website besuchen. '; 
-    		welcomeContain.style.backgroundColor = "#F4D35E";
-    		socials.forEach(social => social.style.color	= '#F4D35E');  
-    		asterisks.forEach(asterisk => asterisk.style.color	= '#F4D35E'); 
 
     	} else {
     		greeting.innerHTML 	= '<em class="helloEvening">Feierabend</em>, wie das duftet!';  
     		hi.innerHTML 		= 'Guten Abend!'; 
     		welcome.innerHTML 	= 'Noch schnell zum <span class="gray">Feierabend</span> auf meiner Website vorbeischauen? '; 
-			welcomeContain.style.backgroundColor = "#E2711D";
-    		socials.forEach(social => social.style.color	= '#E2711D');  
-    		asterisks.forEach(asterisk => asterisk.style.color	= '#E2711D'); 
-
 
     	}
     } 
