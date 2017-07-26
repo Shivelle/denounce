@@ -10,6 +10,7 @@
           welcome		= document.querySelector('#welcome'),
           icons			= document.querySelectorAll('.left .fa-codepen'),
           specials  	= document.querySelectorAll('.listSpecial'),
+          up			= document.querySelector('.fa-arrow-up'),
           socials		= document.querySelectorAll('.social-icons a'),	
           time 		 	= new Date();  
 
@@ -46,6 +47,8 @@
     		welcomeCont.style.background= '#7F7EFF'; 
     		specials.forEach( special => (special.style.color = '#7F7EFF')); 
     		scrollLine.style.background = "#7F7EFF";
+    		up.style.color = "#7F7EFF";
+
 
     	} else if (time.getHours() >= 6 && time.getHours() < 12) {
     		greeting.innerHTML	= '<em class="helloMorning">Morgenstund</em> hat Gold im Mund!';
@@ -56,6 +59,8 @@
     		welcomeCont.style.background= '#3DDC97'; 
 			specials.forEach( special => (special.style.color = '#3DDC97'));
 			scrollLine.style.background = "#3DDC97";
+			up.style.color = "#3DDC97";
+
 
 
     	} else if (time.getHours() >= 12 && time.getHours() < 18) {
@@ -68,8 +73,8 @@
     		specials.forEach( special => (special.style.color = '#E59500'));
     		socials.forEach( social => (social.style.color = '#E59500'));
     		scrollLine.style.background = "#E59500";
+    		up.style.color = "#E59500";
 
-    		console.log(socials)
 
 
     	} else {
@@ -81,6 +86,8 @@
     		welcomeCont.style.background= '#E2711D'; 
     		specials.forEach( special => (special.style.color = '#E2711D'));
     		scrollLine.style.background = "#E2711D";
+    		up.style.color = "#E2711D";
+
     	}
 
     } 
