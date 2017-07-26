@@ -1,28 +1,16 @@
-// CSS COLORS: 
-/*
-$white: #fff;
-$static: #40b9c7; 
-$bodyColor: #efefef; 
-$staticBlue: #40b9c7;
-$iceBlue: #C6D8D3; 
-$staticBlack: #171D1C; 
-$highlightLight: #F4827F; // pink
-$yellow: #F4D35E; 
-$orangeHl: #E2711D; // orange
-$yellowHl: #E59500; // yellow
-$nightHl: #7F7EFF; // purple-blue
-$berry: #93032E; 
-*/
-
-
 	// grab stuff
     const scrollLine  	= document.querySelector('.scroll-line'), 
           mainContent 	= document.querySelector('.main-content'), 
           canvas 	  	= document.querySelector('#canvas'),  
           greeting    	= document.querySelector('.greeting'),  
           hi 		  	= document.querySelector('.hi'),  
+          cta 			= document.querySelector('.cta'),
+          welcomeCont	= document.querySelector('.welcome'),
           scrollMouse	= document.querySelector('.mouse'),
           welcome		= document.querySelector('#welcome'),
+          icons			= document.querySelectorAll('.left .fa-codepen'),
+          specials  	= document.querySelectorAll('.listSpecial'),
+          socials		= document.querySelectorAll('.social-icons a'),	
           time 		 	= new Date();  
 
 
@@ -53,24 +41,48 @@ $berry: #93032E;
     		greeting.innerHTML 	= 'Na, Sie <em class="helloNight">Nachteule</em>?'; 
     		hi.innerHTML 		= 'Gute, aktive Nacht!';
     		welcome.innerHTML	= 'Sie haben sich also mitten in der <span class="gray">Nacht</span> auf meine Website verirrt. ';
-
+    		cta.style.background= '#7F7EFF'; 
+    		icons.forEach( icon => ( icon.style.color = '#7F7EFF'));  
+    		welcomeCont.style.background= '#7F7EFF'; 
+    		specials.forEach( special => (special.style.color = '#7F7EFF')); 
+    		scrollLine.style.background = "#7F7EFF";
 
     	} else if (time.getHours() >= 6 && time.getHours() < 12) {
     		greeting.innerHTML	= '<em class="helloMorning">Morgenstund</em> hat Gold im Mund!';
     		hi.innerHTML 		= 'Guten Morgen!'; 
     		welcome.innerHTML 	= 'Noch nicht mal <span class="gray">Mittag</span> und Sie haben schon meine Website gefunden. '; 
+    		cta.style.background= '#3DDC97'; 
+    		icons.forEach( icon => ( icon.style.color = '#3DDC97'));  
+    		welcomeCont.style.background= '#3DDC97'; 
+			specials.forEach( special => (special.style.color = '#3DDC97'));
+			scrollLine.style.background = "#3DDC97";
+
 
     	} else if (time.getHours() >= 12 && time.getHours() < 18) {
     		greeting.innerHTML 	= 'Lass die <em class="helloNoon">Sonne</em> in dein Herz!'; 
     		hi.innerHTML		= 'Guten Tag!'; 
     		welcome.innerHTML 	= 'Na, schon <span class="gray">Mittagpause</span> gehabt? Schön, dass Sie meine Website besuchen. '; 
+    		cta.style.background= '#E59500'; 
+    		icons.forEach( icon => ( icon.style.color = '#E59500')); 
+    		welcomeCont.style.background= '#E59500';
+    		specials.forEach( special => (special.style.color = '#E59500'));
+    		socials.forEach( social => (social.style.color = '#E59500'));
+    		scrollLine.style.background = "#E59500";
+
+    		console.log(socials)
+
 
     	} else {
     		greeting.innerHTML 	= '<em class="helloEvening">Feierabend</em>, wie das duftet!';  
     		hi.innerHTML 		= 'Guten Abend!'; 
     		welcome.innerHTML 	= 'Noch schnell zum <span class="gray">Feierabend</span> auf meiner Website vorbeischauen? '; 
-
+    		cta.style.background= '#E2711D'; 
+    		icons.forEach( icon => ( icon.style.color = '#E2711D'));  
+    		welcomeCont.style.background= '#E2711D'; 
+    		specials.forEach( special => (special.style.color = '#E2711D'));
+    		scrollLine.style.background = "#E2711D";
     	}
+
     } 
 
 

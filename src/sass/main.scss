@@ -50,7 +50,7 @@ body {
 		color: $highlightLight; 
 	}
 		.helloNoon {
-			color: $yellow; 
+			color: $yellowHl; 
 			padding-right: 5px; 
 		}
 
@@ -95,6 +95,27 @@ body {
   		z-index: 999; 
 
 
+		.social-icons {
+			right: 0; 
+			top: 0; 
+			margin: 0;
+			position: absolute; 
+			line-height: 150%;
+			a {
+				display: inline-block;
+				font-size: 2em;
+				color: $staticBlue;
+				margin: 5px;
+				transform: rotateY(0deg);
+				transition: transform 0.2s ease-in-out, color 0.2s linear;
+				&:hover {
+					color: #FDF0D5;
+					transform: rotateY(360deg);
+					transition: transform 0.6s ease-in-out, color 0.4s linear;
+				}
+			}
+		}
+
   		.static-txt {
   			position: absolute; 
   			text-align: center; 
@@ -112,40 +133,20 @@ body {
   			}
 
   			p {
-  				color: lightgray; 
-  				font-size: 1.2em; 
-  				padding-top: 2em; 
+  				color: $staticBlue; 
+  				font-size: 1.3em; 
+  				padding-top: 1em; 
 
-  				.asterix {
-  					color: $staticBlue; 
-  				}
   			}
 
-			.social-icons {
-				margin: 25px auto;
-				line-height: 150%;
-				max-width: 550px;
-				a {
-					display: inline-block;
-					font-size: 2em;
-					color: $staticBlue;
-					margin: 0 10px;
-					transform: rotateY(0deg);
-					transition: transform 0.2s ease-in-out, color 0.2s linear;
-					&:hover {
-						color: #FDF0D5;
-						transform: rotateY(360deg);
-						transition: transform 0.6s ease-in-out, color 0.4s linear;
-					}
-				}
-			}
+
 			.cta {
 				background: $morning; 
 				color: $staticBlack; 
 				border-radius: 0;
 				text-transform: uppercase;  
-				margin-top: 20px; 
-				font-size: 2em; 
+				font-size: 2em;
+				margin-top: 5em;  
 				transition: all 0.5s ease-in-out; 
 				&:hover {
 					background: $staticBlue; 
