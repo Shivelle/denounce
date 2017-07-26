@@ -1,5 +1,4 @@
 $white: #fff;
-$static: #40b9c7; 
 $staticBlue: #40b9c7;
 $iceBlue: #C6D8D3; 
 $staticBlack: #171D1C; 
@@ -10,9 +9,7 @@ $yellowHl: #E59500; // yellow
 $nightHl: #7F7EFF; // purple-blue
 $berry: #93032E; 
 $morning: #3DDC97; // türkis
-// $morning: #8CD867; // green
-// $morning: #DB74B0; // pink
-// $morning: #F4A261; // warm orange
+$evening: #FF6666; 
 
 
 * {
@@ -60,7 +57,7 @@ body {
 		}
 
 		.helloEvening {
-			color: $orangeHl; 
+			color: $evening; 
 			padding-right: 5px; 
 		}
 

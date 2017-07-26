@@ -37,6 +37,7 @@
     }
 
     function displayGreeting() {
+    
 
     	if(time.getHours() >= 0 && time.getHours() < 6) {
     		greeting.innerHTML 	= 'Na, Sie <em class="helloNight">Nachteule</em>?'; 
@@ -81,12 +82,12 @@
     		greeting.innerHTML 	= '<em class="helloEvening">Feierabend</em>, wie das duftet!';  
     		hi.innerHTML 		= 'Guten Abend!'; 
     		welcome.innerHTML 	= 'Noch schnell zum <span class="gray">Feierabend</span> auf meiner Website vorbeischauen? '; 
-    		cta.style.background= '#E2711D'; 
-    		icons.forEach( icon => ( icon.style.color = '#E2711D'));  
-    		welcomeCont.style.background= '#E2711D'; 
-    		specials.forEach( special => (special.style.color = '#E2711D'));
-    		scrollLine.style.background = "#E2711D";
-    		up.style.color = "#E2711D";
+    		cta.style.background= '#FF6666'; 
+    		icons.forEach( icon => ( icon.style.color = '#FF6666'));  
+    		welcomeCont.style.background= '#FF6666'; 
+    		specials.forEach( special => (special.style.color = '#FF6666'));
+    		scrollLine.style.background = 'FF6666';
+    		up.style.color = '#FF6666';
 
     	}
 
