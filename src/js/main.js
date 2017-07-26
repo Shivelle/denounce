@@ -10,7 +10,7 @@
           welcome		= document.querySelector('#welcome'),
           icons			= document.querySelectorAll('.left .fa-codepen'),
           specials  	= document.querySelectorAll('.listSpecial'),
-          up			= document.querySelector('.fa-arrow-up'),
+          up			= document.querySelector('#up'),
           socials		= document.querySelectorAll('.social-icons a'),	
           time 		 	= new Date();  
 
@@ -85,7 +85,8 @@
     		cta.style.background= '#FF6666'; 
     		icons.forEach( icon => ( icon.style.color = '#FF6666'));  
     		welcomeCont.style.background= '#FF6666'; 
-    		specials.forEach( special => (special.style.color = '#FF6666'));
+    		specials.forEach( social => (social.style.color = '#FF6666'));
+    		socials.forEach( special => (special.style.color = '#FF6666'));
     		scrollLine.style.background = 'FF6666';
     		up.style.color = '#FF6666';
 
