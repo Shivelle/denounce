@@ -102,7 +102,7 @@
     		welcome.innerHTML 	= 'Noch schnell zum <span class="gray">Feierabend</span> auf meiner Website vorbeischauen? '; 
     		cta.style.background= '#FF6666'; 
     		icons.forEach( icon => ( icon.style.color = '#FF6666'));  
-    		welcomeCont.style.background= '#FF6666'; 
+    		// welcomeCont.style.background= '#FF6666'; 
     		specials.forEach( social => (social.style.color = '#FF6666'));
     		socials.forEach( special => (special.style.color = '#FF6666'));
     		scrollLine.style.background = 'FF6666';

@@ -71,7 +71,7 @@ body {
 
 		&:hover {
 			text-decoration: none; 
-
+			color: $staticBlack; 
 		}
 	}
 
@@ -188,13 +188,23 @@ body {
   			}
 
 			.cta {
-				background: $morning; 
+				background: $staticBlue; 
 				color: $staticBlack; 
 				border-radius: 0;
 				text-transform: uppercase;  
 				font-size: 2em;
-				margin-top: 5em;  
+				margin-top: 3em;  
 				transition: all 0.5s ease-in-out; 
+
+
+				&:hover {
+					background: $staticBlue; 
+				} 
+
+				@include media( "screen", "<minWidth") {
+					margin-top: 1em; 
+				};
+
 
 			}
 
@@ -326,6 +336,15 @@ body {
 					padding-top: 1em; 
 					font-size: 2em;
 					letter-spacing: 0.1em;  
+
+					@include media( "screen", ">minWidth", "<bp1Width") {
+						font-size: 2em; 
+					}; 
+
+					@include media( "screen", "<minWidth") {
+						font-size: 1.9em; 
+					}; 
+
 				}
 			}
 
@@ -334,7 +353,7 @@ body {
 				font-size: 0.9em; 
 				text-align: justify; 
 				@include media( "screen", ">minWidth", "<bp1Width") {
-					font-size: 1em; 
+					font-size: 16px; 
 					letter-spacing: 0.03em; 
 					line-height: 1.5em; 
 					padding: 1.5em 2.7em; 
@@ -342,7 +361,7 @@ body {
 
 				@include media( "screen", "<minWidth") {
 					padding: 0.5em 2em; 
-					font-size: 0.7em; 
+					font-size: 16px; 
 					letter-spacing: 0; 
 				}; 
 			}
@@ -462,7 +481,7 @@ body {
 				h2 {
 					text-align: center; 
 					padding-bottom: 0.5em; 
-					font-size: 2em;
+					font-size: 2em; 
 					letter-spacing: 0.1em;  
 				}
 			}
@@ -499,7 +518,6 @@ body {
 
 					@include media( "screen", "<minWidth") {
 						margin-bottom: 0.5em; 
-						margin-right: 0.8em; 
 						font-size: 3em; 
 					}; 
 
@@ -531,18 +549,23 @@ body {
 					text-align: center; 
 					padding-bottom: 1em; 
 					font-size: 1.7em;
+					font-size: 2.5em; 
 					letter-spacing: 0.1em;  
+					@include media( "screen", "<minWidth") {
+						font-size: 2.2em; 
+						letter-spacing: 0.05em;
+					}; 
 				}
 
 
 				@include media( "screen", ">minWidth", "<bp1Width") {
-					font-size: 1.2em; 
+					font-size: 16px; 
 					letter-spacing: 0.03em; 
 					line-height: 1.5em; 
 				}; 
 
 				@include media( "screen", "<minWidth") {
-					font-size: 1em; 
+					font-size: 16px; 
 					letter-spacing: 0; 
 				}; 
 			}
@@ -610,13 +633,13 @@ body {
 						letter-spacing: 0.1em; 
 
 						@include media( "screen", ">minWidth", "<bp1Width") {
-							font-size: 1.2em; 
+							font-size: 16px; 
 							letter-spacing: 0.03em; 
 							line-height: 1.5em; 
 						}; 
 
 						@include media( "screen", "<minWidth") {
-							font-size: 1em; 
+							font-size: 16px; 
 							letter-spacing: 0; 
 							padding: 0.5em; 
 						}; 
@@ -638,6 +661,12 @@ body {
 
 							@include media( "screen", "<minWidth") {
 								font-size: 0.9em; 
+								letter-spacing: 0; 
+							}; 
+
+							@include media( "screen", "<minWidth") {
+								font-size: 1em;
+								padding-left: 1em;  
 								letter-spacing: 0; 
 							}; 
 
@@ -1006,12 +1035,21 @@ body {
 							text-align: center;  
 						}; 
 
+						p {
+							font-size: 16px; 
+
+								@include media( "screen", "<minWidth") {
+									text-align: center;  
+								}; 
+
+						}
+
 					    .thin-line {
 						    font-size: 1.6em;
 						  }
-						  .thick-line {
-						    font-size: 2em;
-						  }
+						.thick-line {
+						   font-size: 2em;
+						}
 					} 
 
 					#gform {
