@@ -14,7 +14,8 @@ $evening: #FF6666;
 
 $mediaMaxWidth: 1260px;
 $mediaBp1Width: 960px;
-$mediaMinWidth: 480px;
+$mediaMinWidth: 768px;
+$mediaMiniMiniWidth: 480px;
 
 @function translate-media-condition($c) {
   $condMap: (
@@ -126,6 +127,15 @@ body {
 		height: 100vh; 
   		z-index: 999; 
 
+		@include media( "screen", "<minWidth") {
+			position: absolute;
+			display: block; 
+			top: 0; 
+			left: 0; 
+			height: 600px; 
+		}; 
+
+
 
 		.social-icons {
 			right: 0; 
@@ -197,6 +207,10 @@ body {
   			position: relative; 
   			z-index: -1; 
 
+			@include media( "screen", "<minWidth") {
+				width: 100vw; 
+			}; 
+
   		}
 
 	}
@@ -232,6 +246,13 @@ body {
 		top: 0; 
 		z-index: 10; 
 		overflow: hidden; 
+		@include media( "screen", "<minWidth") {
+			position: absolute; 
+			display: block; 
+			top: 600px; 
+		}; 
+
+
 
 		.scroll-line {
 		      position: fixed;
@@ -759,89 +780,105 @@ body {
 
 					.screenshot {
 						position: relative; 
-						width: 300px; 
-						height: 250px; 
+						min-width: 300px; 
+						min-height: 250px; 
 						background-size: cover; 
 					}
 
 						&:nth-of-type(1) {
 							background-image: url('../images/projects/raw/flexPanels.png'); 
 							background-blend-mode: multiply; 
+							background-size: cover; 
 						}
 
 						&:nth-of-type(2) {
 							background-image: url('../images/projects/raw/simpleCanvas.png');
 							background-blend-mode: multiply; 
+							background-size: cover; 
 						}
 
 						&:nth-of-type(3) {
 							background-image: url('../images/projects/raw/variables.png'); 
 							background-blend-mode: multiply; 
+							background-size: cover; 
 						}
 
 						&:nth-of-type(4) {
 							background-image: url('../images/projects/raw/clock.png'); 
 							background-blend-mode: multiply; 
+							background-size: cover; 
 						}
 
 						&:nth-of-type(5) {
 							background-image: url('../images/projects/raw/bookmarkingApp.png'); 
 							background-blend-mode: multiply; 
+							background-size: cover; 
 						}
 
 						&:nth-of-type(6) {
 							background-image: url('../images/projects/raw/scrollProgress.png');  
 							background-blend-mode: multiply; 
+							background-size: cover; 
 						}
 
 						&:nth-of-type(7) {
 							background-image: url('../images/projects/raw/accordion.png'); 
 							background-blend-mode: multiply; 
+							background-size: cover; 
 						}
 
 						&:nth-of-type(8) {
 							background-image: url('../images/projects/raw/iceCreamr.png'); 
 							background-blend-mode: multiply; 
+							background-size: cover; 
 						}
 
 						&:nth-of-type(9) {
 							background-image: url('../images/projects/raw/stopwatch.png'); 
 							background-blend-mode: multiply; 
+							background-size: cover; 
 						}
 
 						&:nth-of-type(10) {
 							background-image: url('../images/projects/raw/twitchAPI.png');  
 							background-blend-mode: multiply; 
+							background-size: cover; 
 						}
 
 						&:nth-of-type(11) {
 							background-image: url('../images/projects/raw/pricingTable.png'); 
 							background-blend-mode: multiply; 
+							background-size: cover; 
 						}
 
 						&:nth-of-type(12) {
 							background-image: url('../images/projects/raw/crazyButton.png'); 
 							background-blend-mode: multiply; 
+							background-size: cover; 
 						}
 
 						&:nth-of-type(13) {
 							background-image: url('../images/projects/raw/wikipediaViewer.png');  
 							background-blend-mode: multiply; 
+							background-size: cover; 
 						}
 
 						&:nth-of-type(14) {
 							background-image: url('../images/projects/raw/colorGame.png'); 
 							background-blend-mode: multiply; 
+							background-size: cover; 
 						}
 						
 						&:nth-of-type(15) {
 							background-image: url('../images/projects/raw/todoList.png');  
 							background-blend-mode: multiply; 
+							background-size: cover; 
 						}
 
 						&:nth-of-type(16) {
 							background-image: url('../images/projects/raw/checkboxes.png');  
 							background-blend-mode: multiply; 
+							background-size: cover; 
 						}
 
 						&:nth-of-type(1n) {

@@ -12,6 +12,9 @@
           icons			= document.querySelectorAll('.left .fa-codepen'),
           specials  	= document.querySelectorAll('.listSpecial'),
           socials		= document.querySelectorAll('.social-icons a'),	
+		  accordion 	= document.querySelector('.accordion'), 
+		  items 	    = accordion.querySelectorAll('li'), 
+	 	  questions 	= accordion.querySelectorAll('.question'),
           time 		 	= new Date();  
 
 
@@ -35,6 +38,20 @@
       }
 
     }
+
+
+    function toggleAccordion() {
+	const thisItem = this.parentNode;
+
+	items.forEach(item => {
+		if(thisItem == item) {
+			thisItem.classList.toggle('open'); 
+			return
+		}
+			item.classList.remove('open'); 
+	});  
+
+	}
 
     function displayGreeting() {
     
@@ -96,8 +113,20 @@
     } 
 
 
+   function mediaAdjust (){
+   		// landscape = window.orientation? window.orientation =='landscape': true; 
+
+   		if(window.innerWidth <= 480) {
+   			console.log('small thingy');
+   		}
+   }
+
+   window.addEventListener('load', mediaAdjust); 
+
+
 
     // event listeners
+    questions.forEach(question => question.addEventListener('click', toggleAccordion));
     window.addEventListener('scroll', debounce(fillScrollLine));
     window.addEventListener('load', displayGreeting); 
 
@@ -150,6 +179,7 @@
 
 		  window.resizeWindow = () => {
 		    window.w = canvas.width = window.innerWidth;
+
 		    return window.h = canvas.height = window.innerHeight;
 		  };
 
@@ -278,25 +308,5 @@
 
 
 
-	// convert this: ACCORDION
-	const accordion = document.querySelector('.accordion'); 
-const items 	= accordion.querySelectorAll('li'); 
-const questions = accordion.querySelectorAll('.question'); 
-
-// functions
-function toggleAccordion() {
-	const thisItem = this.parentNode;
-
-	items.forEach(item => {
-		if(thisItem == item) {
-			thisItem.classList.toggle('open'); 
-			return
-		}
-			item.classList.remove('open'); 
-	});  
-
-}
 
 
-// event listeners
-questions.forEach(question => question.addEventListener('click', toggleAccordion));
