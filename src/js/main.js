@@ -8,9 +8,9 @@
           welcomeCont	= document.querySelector('.welcome'),
           scrollMouse	= document.querySelector('.mouse'),
           welcome		= document.querySelector('#welcome'),
+          up			= document.querySelector('#up'),
           icons			= document.querySelectorAll('.left .fa-codepen'),
           specials  	= document.querySelectorAll('.listSpecial'),
-          up			= document.querySelector('#up'),
           socials		= document.querySelectorAll('.social-icons a'),	
           time 		 	= new Date();  
 
@@ -62,6 +62,7 @@
 			scrollLine.style.background = "#3DDC97";
 			up.style.color = "#3DDC97";
 
+			
 
 
     	} else if (time.getHours() >= 12 && time.getHours() < 18) {
