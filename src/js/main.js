@@ -113,15 +113,7 @@
     } 
 
 
-   function mediaAdjust (){
-   		// landscape = window.orientation? window.orientation =='landscape': true; 
 
-   		if(window.innerWidth <= 480) {
-   			console.log('small thingy');
-   		}
-   }
-
-   window.addEventListener('load', mediaAdjust); 
 
 
 
