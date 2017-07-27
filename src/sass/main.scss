@@ -12,6 +12,40 @@ $morning: #3DDC97; // türkis
 $evening: #FF6666; 
 
 
+$mediaMaxWidth: 1260px;
+$mediaBp1Width: 960px;
+$mediaMinWidth: 480px;
+
+@function translate-media-condition($c) {
+  $condMap: (
+		"screen": "only screen",
+		"print": "only print",
+		"retina": "(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5), (min-resolution: 120dpi)",
+     ">maxWidth": "(min-width: #{$mediaMaxWidth + 1})",
+		"<maxWidth": "(max-width: #{$mediaMaxWidth})", 		
+		">bp1Width": "(min-width: #{$mediaBp1Width + 1})",
+		"<bp1Width": "(max-width: #{$mediaBp1Width})",
+		">minWidth": "(min-width: #{$mediaMinWidth + 1})",
+		"<minWidth": "(max-width: #{$mediaMinWidth})"
+	);
+  @return map-get( $condMap, $c );
+}
+
+// The mdia mixin
+@mixin media($args...) {
+  $query: "";
+  @each $arg in $args {
+    $op: "";
+    @if ( $query != "" ) {
+      $op: " and ";
+    }
+    $query: $query + $op + translate-media-condition($arg);
+  }
+  @media #{$query}  { @content; }
+}
+
+
+
 * {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -19,6 +53,7 @@ $evening: #FF6666;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
   box-sizing: border-box;
+-webkit-font-smoothing: antialiased;
 }
 
 
@@ -214,14 +249,22 @@ body {
 		.welcome {
 			background-color: $staticBlue;  
 			color: $white;
-			padding: 3em 2em; 
+			padding: 2em; 
 			text-align: center; 
 			font-size: 1.2em;
 			letter-spacing: .1em;  
 			line-height: 1.4em; 
 			position: relative; 
-			height: 9em; 
 
+
+			@include media( "screen", ">minWidth", "<bp1Width") {
+				font-size: 1em; 
+			}; 
+
+			@include media( "screen", "<minWidth") {
+				font-size: 1em; 
+			}; 
+			
 			p	{
 
 
@@ -269,6 +312,18 @@ body {
 				padding: 3em; 
 				font-size: 0.9em; 
 				text-align: justify; 
+				@include media( "screen", ">minWidth", "<bp1Width") {
+					font-size: 1em; 
+					letter-spacing: 0.03em; 
+					line-height: 1.5em; 
+					padding: 1.5em 2.7em; 
+				}; 
+
+				@include media( "screen", "<minWidth") {
+					padding: 0.5em 2em; 
+					font-size: 0.7em; 
+					letter-spacing: 0; 
+				}; 
 			}
 
 
@@ -282,6 +337,11 @@ body {
 				position: fixed; 
 				top: 80%;  
 				text-align: center; 
+
+				@include media( "screen", "<minWidth") {
+					display: none; 	
+				}; 
+
 			}
 
 			.mouse-icon {
@@ -398,8 +458,8 @@ body {
 				.skill-icon {
 					display: inline-block; 
 					float: none; 
-					text-align: left; 
-					opacity: 0.35; 
+					text-align: center; 
+					opacity: 0.45; 
 					transform: rotateY(0deg);
 					color: $staticBlue; 
 					font-size: 3.8em;
@@ -407,16 +467,25 @@ body {
 					transition: transform 0.2s ease-in-out;
 					
 					&:hover {
-						//transform: rotateY(360deg);
-						//transition: transform 0.6s ease-in-out;
 	    				transition: all 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
           				transform: translateY(-10px);
 					}
 
+					@include media( "screen", ">minWidth", "<bp1Width") {
+						margin-bottom: 1em; 
+						font-size: 3.3em; 
+					}; 
+
+					@include media( "screen", "<minWidth") {
+						margin-bottom: 0.5em; 
+						margin-right: 0.8em; 
+						font-size: 3em; 
+					}; 
+
 				}
 
 				.major {
-					opacity: .85; 
+					opacity: 0.85; 
 				}
 			}
 
@@ -443,6 +512,18 @@ body {
 					font-size: 1.7em;
 					letter-spacing: 0.1em;  
 				}
+
+
+				@include media( "screen", ">minWidth", "<bp1Width") {
+					font-size: 1.2em; 
+					letter-spacing: 0.03em; 
+					line-height: 1.5em; 
+				}; 
+
+				@include media( "screen", "<minWidth") {
+					font-size: 1em; 
+					letter-spacing: 0; 
+				}; 
 			}
 			// Accordion 
 
@@ -455,6 +536,9 @@ body {
 					background: #fff;
 					margin: 0 auto;
 					padding: 30px;
+					@include media( "screen", "<minWidth") {
+						padding: 0.2em 1em; 
+					}; 
 				}
 
 				.question {
@@ -462,11 +546,18 @@ body {
 					padding: 10px;
 					cursor: pointer;
 					position: relative;
+					
 
 					h2 {
 						font-size: 1.8em; 
 						margin: 0;
 						color: $staticBlack;
+
+						@include media( "screen", "<minWidth") {
+							font-size: 1.4em; 
+							letter-spacing: 0; 
+							padding: 0.1em; 
+						}; 
 					}
 
 					.listSpecial {
@@ -497,14 +588,38 @@ body {
 						line-height: 1.8em;
 						letter-spacing: 0.1em; 
 
+						@include media( "screen", ">minWidth", "<bp1Width") {
+							font-size: 1.2em; 
+							letter-spacing: 0.03em; 
+							line-height: 1.5em; 
+						}; 
+
+						@include media( "screen", "<minWidth") {
+							font-size: 1em; 
+							letter-spacing: 0; 
+							padding: 0.5em; 
+						}; 
+
 					}
 
 					ul {
 						padding: 0 3em 2em 3em; 
+							@include media( "screen", "<minWidth") {
+								padding-left: 0em; 
+
+							}; 
+
 						li {
-							padding: 3px 0; 
+							padding: 4px 0; 
+
 							a {
 								font-size: 1.2em; 
+
+							@include media( "screen", "<minWidth") {
+								font-size: 0.9em; 
+								letter-spacing: 0; 
+							}; 
+
 							}
 						}
 					}
@@ -837,11 +952,11 @@ body {
 			}
 
 			.contact {
-				text-align: left; 				
+				text-align: left; 
+				padding: 2em; 				
 				
 				.row {
-					float: left; 
-					max-width: 700px; 
+
 					
 					.talk {
 					  text-align: right;
@@ -855,10 +970,10 @@ body {
 					} 
 
 					#gform {
-						max-width: 500px;
-						padding: 2em;  
+
 
 							.form-control { 
+								max-width: 100%; 
 								opacity: 0.5;   
 								color: $white; 
 								border-radius: 0; 
@@ -880,7 +995,7 @@ body {
 								overflow: hidden; 
 
 								&::-webkit-input-placeholder { 
-								  background: pink;
+								  background: lightgray;
 								  height: 50px;  
 								}
 							}
@@ -912,18 +1027,14 @@ body {
 							border: none; 
 							border-radius: 0; 
 							font-size: 1.7em;  
-							min-width: 300px; 
-							max-width: 700px; 
 						  	border: none;
 						  	cursor: pointer;
 						  	color: white;
-						  	font-size: 24px;
-						  	padding-top: 10px;
-						  	padding-bottom: 10px;
-						  	transition: all 0.2s ease-in-out;
+						  	font-size: 24px;			  	
 						  	margin-top: -4px;
 						  	font-weight: 700;
 						  	text-transform: uppercase;
+						  	transition: all 0.2s ease-in-out;
 
 						  	&:hover {
 						  		background: #1e1e1e;
