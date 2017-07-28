@@ -1,1 +1,1 @@
-console.log('hello from alt.js'); 
+console.log('remove alt.js'); 

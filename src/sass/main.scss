@@ -187,7 +187,7 @@ body {
 
   			}
 
-			.cta {
+			#cta {
 				background: $staticBlue; 
 				color: $staticBlack; 
 				border-radius: 0;
@@ -196,16 +196,13 @@ body {
 				margin-top: 3em;  
 				transition: all 0.5s ease-in-out; 
 
-
-				&:hover {
-					background: $staticBlue; 
-				} 
-
 				@include media( "screen", "<minWidth") {
 					margin-top: 1em; 
 				};
 
-
+				&:hover {
+					background: $staticBlue; 
+				}
 			}
 
 
@@ -461,22 +458,22 @@ body {
 
 		/* ======================== SKILLS ========================= */
 		#skills {
+			background: #fff; 
 			padding: 20px 0; 
 			margin: 0; 
-			background: $white; 
 			color: $staticBlack;
 			font-size: 1.1em;
 			line-height: 1.8em;
 			letter-spacing: 0.1em;  
 
 			.intro {
-				background: #fff; 
 				background: $white; 
 				color: $staticBlack; 
 				text-align: center; 
 				font-size: 1em; 
 				padding-bottom: .9em;  
 				margin: 0;
+
 
 				h2 {
 					text-align: center; 
