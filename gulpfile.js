@@ -3,6 +3,7 @@ var gulp = require('gulp'),
 	browserSync = require('browser-sync').create(), 
     sass = require('gulp-ruby-sass'), 
     notify = require("gulp-notify"), 
+	 port = process.env.PORT || 8000,
     imagemin = require('gulp-imagemin');
 
 
@@ -51,11 +52,11 @@ gulp.task('serve', function() {
 	browserSync.init({
 		open:false,
 		server: {
-			baseDir: './'
+			//baseDir: './'
 		}, 
 		socket: {
     		//domain: "localhost:3000"
-    		domain: "shivelle.com"
+    		//domain: "shivelle.com"
 		}
 	});
 
@@ -74,5 +75,9 @@ gulp.task('img', () =>
 		.pipe(gulp.dest('dist/images'))
 );
 
+server.listen(port, function() {
+    console.log("App is running on port " + port);
+});
+
 // autorun
-gulp.task('default', ['css', 'js', 'img', 'watch', 'serve']); 
+gulp.task('default', ['css', 'js', 'img', 'watch', /*'serve'*/]); 
