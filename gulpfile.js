@@ -11,8 +11,8 @@ var gulp = require('gulp'),
 gulp.task ('css', function() {
 	// compile sass
 	// output file to  a dist/
-	return gulp.src(['./src/sass/main.scss', 
-		'./src/sass/alt.scss'
+	return gulp.src(['./src/sass/main.scss'
+		//,'./src/sass/alt.scss'
 	])
 	.pipe(plugins.sourcemaps.init())
 	.pipe(plugins.sass().on('error', plugins.sass.logError))
@@ -53,7 +53,8 @@ gulp.task('serve', function() {
 			baseDir: './'
 		}, 
 		socket: {
-    		domain: "localhost:3000"
+    		//domain: "localhost:3000"
+    		domain: "shivelle.com"
 		}
 	});
 
