@@ -32,12 +32,11 @@
   }, 
   "engines": {
     "node": ">= 8.2.1", 
-    "npm, 
-  }, 
+    "npm": "5.3.0"
+  },
   "scripts": {
   "start": "node app",
   "postinstall": "gulp default"
- }
-
+}
 }
 
