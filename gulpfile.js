@@ -3,7 +3,7 @@ var gulp = require('gulp'),
 	browserSync = require('browser-sync').create(), 
     sass = require('gulp-ruby-sass'), 
     notify = require("gulp-notify"), 
-	 port = process.env.PORT || 8000,
+	port = process.env.PORT || 8000,
     imagemin = require('gulp-imagemin');
 
 
@@ -75,9 +75,9 @@ gulp.task('img', () =>
 		.pipe(gulp.dest('dist/images'))
 );
 
-/*server.listen(port, function() {
+server.listen(port, function() {
     console.log("App is running on port " + port);
-});*/
+});
 
 
 // build
