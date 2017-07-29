@@ -75,9 +75,9 @@ gulp.task('img', () =>
 		.pipe(gulp.dest('dist/images'))
 );
 
-server.listen(port, function() {
+/*server.listen(port, function() {
     console.log("App is running on port " + port);
-});
+});*/
 
 // autorun
 gulp.task('default', ['css', 'js' /*, 'img', 'watch', 'serve'*/]); 
