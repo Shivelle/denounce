@@ -84,4 +84,4 @@ gulp.task('img', () =>
 
 gulp.task('build', ['css', 'js']); 
 // autorun
-//gulp.task('default', ['css', 'js' /*, 'img', 'watch', 'serve'*/]); 
+gulp.task('default', ['css', 'js' /*, 'img', 'watch', 'serve'*/]); 
