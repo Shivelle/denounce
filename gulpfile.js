@@ -79,5 +79,9 @@ gulp.task('img', () =>
     console.log("App is running on port " + port);
 });*/
 
+
+// build
+
+gulp.task('build', ['css', 'js']); 
 // autorun
-gulp.task('default', ['css', 'js' /*, 'img', 'watch', 'serve'*/]); 
+//gulp.task('default', ['css', 'js' /*, 'img', 'watch', 'serve'*/]); 
