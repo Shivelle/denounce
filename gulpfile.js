@@ -80,4 +80,4 @@ server.listen(port, function() {
 });
 
 // autorun
-gulp.task('default', ['css', 'js', 'img', 'watch'/*, 'serve'*/]); 
+gulp.task('default', ['css', 'js' /*, 'img', 'watch', 'serve'*/]); 
