@@ -9,7 +9,6 @@
   "author": "Shivelle",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^3.3.7",
     "jquery": "^3.2.1",
     "read": "^1.0.7", 
     "babel-preset-es2015": "^6.24.1",
