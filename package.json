@@ -50,8 +50,8 @@
     "npm": "5.3.0"
   },
   "scripts": {
-  "gulp": "gulp",
-  "postinstall": "gulp default && bower install"
-}
+    "start": "node app",
+    "postinstall": "gulp default"
+  }
 }
 
