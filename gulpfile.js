@@ -1,10 +1,9 @@
-var gulp = require('gulp'), 
-	plugins = require('gulp-load-plugins')(),
+var gulp 		= require('gulp'), 
+	plugins 	= require('gulp-load-plugins')(),
 	browserSync = require('browser-sync').create(), 
-    sass = require('gulp-ruby-sass'), 
-    notify = require("gulp-notify"), 
-	port = process.env.PORT || 8000,
-    imagemin = require('gulp-imagemin');
+    sass 		= require('gulp-ruby-sass'), 
+    notify 		= require("gulp-notify"), 
+    imagemin 	= require('gulp-imagemin');
 
 
 
@@ -50,13 +49,12 @@ gulp.task('watch', function () {
 // browse our app through browsersync
 gulp.task('serve', function() {
 	browserSync.init({
-		open:false,
 		server: {
-			//baseDir: './'
+			baseDir: './'
 		}, 
 		socket: {
     		//domain: "localhost:3000"
-    		//domain: "shivelle.com"
+    		domain: "shivelle.com"
 		}
 	});
 
@@ -65,7 +63,7 @@ gulp.task('serve', function() {
 
 // run imagemin
 gulp.task('img', () =>
-	gulp.src('src/mg/*')
+	gulp.src('src/img/*')
 		.pipe(imagemin([
 			imagemin.gifsicle({interlaced: true}),
 			imagemin.jpegtran({progressive: true}),
@@ -75,13 +73,11 @@ gulp.task('img', () =>
 		.pipe(gulp.dest('dist/images'))
 );
 
-server.listen(port, function() {
-    console.log("App is running on port " + port);
-});
-
+// production 
+gulp.task('heroku:production', ['css', 'js']);
 
 // build
+gulp.task('build', ['css', 'js']);
 
-gulp.task('build', ['css', 'js']); 
 // autorun
-gulp.task('default', ['css', 'js' /*, 'img', 'watch', 'serve'*/]); 
+gulp.task('default', ['css', 'js', 'img', 'watch', 'serve']); 
